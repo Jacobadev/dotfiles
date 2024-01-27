@@ -124,7 +124,7 @@ alias vim="lvim"
 alias nvim="lvim"
 alias musica="ncmpcpp"
 alias ls='exa --no-time'
-alias cat='bat '
+alias cat='bat --icons -'
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
 
