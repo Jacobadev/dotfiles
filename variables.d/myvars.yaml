@@ -1,0 +1,3 @@
+dynvariables:
+  BSP: "echo ${BSP}"
+  KBD: "echo ${KBD}"

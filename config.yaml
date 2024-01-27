@@ -1,0 +1,30 @@
+config:
+  backup: true
+  banner: true
+  create: true
+  dotpath: dotfiles
+  keepdot: false
+  link_dotfile_default: nolink
+  link_on_import: nolink
+  longkey: false
+  import_variables:
+  - variables.d/myvars.yaml
+options:
+  confpath: ~/.dotfiles
+  tmpdir: ~/dotdrop_temp  # Diretório personalizado para arquivos temporários
+dotfiles:
+  f_zshrc:
+    src: home/jacoba/.zshrc
+    dst: /home/jacoba/.zshrc
+  f_gitconfig:
+    src: home/jacoba/.gitconfig
+    dst: /home/jacoba/.gitconfig
+  d_screenlayout:
+    src: home/jacoba/.screenlayout
+    dst: /home/jacoba/.screenlayout
+profiles:
+  archlinux:
+    dotfiles:
+    - f_zshrc
+    - f_gitconfig
+    - d_screenlayout
