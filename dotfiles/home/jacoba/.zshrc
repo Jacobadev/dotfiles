@@ -143,10 +143,10 @@ export ls
 # Dotdrop Git
 
 export DOTREPO=$HOME/jacoba_dot
-
 alias dotdrop="$DOTREPO/dotdrop.sh"
 alias dotgit="git -C $DOTREPO"
 alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
+
 ## TODO > checagem de erros, printar apenas em qual operação deu problema, executar em background, gerar log e mostrar apenas mensagem de conclusão ou falha, rodar de dentro de um servidor, e executar regularmente as 7 da manhã todos so dias
 
 bindkey  "^[[H"   beginning-of-line
