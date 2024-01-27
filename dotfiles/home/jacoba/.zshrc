@@ -198,3 +198,5 @@ alias lS='exa -1'                                                              #
 alias lt='exa --tree --level=2'       
 
 alias cat='exa'
+
+alias du='duf'
