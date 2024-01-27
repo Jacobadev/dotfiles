@@ -136,6 +136,17 @@ export BSP=$HOME/.config/bspwm/bspwmrc
 export KBD=$HOME/.config/bspwm/sxhkdrc
 export DOTS=$HOME/jacoba_dot/dotfiles/home/jacoba/
 export XDG_CONFIG_HOME=$HOME/.config
+export GITHUB_TOKEN=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
+
+# Dotdrop Git
+
+export DOTREPO=$HOME/jacoba_dot
+
+alias dotdrop="$DOTREPO/dotdrop.sh"
+alias dotgit="git -C $DOTREPO"
+alias dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push"
+
+
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
