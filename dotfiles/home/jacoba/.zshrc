@@ -123,8 +123,6 @@ alias vm-off="sudo systemctl stop libvirtd.service"
 alias vim="lvim"
 alias nvim="lvim"
 alias musica="ncmpcpp"
-alias ls='exa --no-time'
-alias cat='bat --icons -'
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
 
@@ -198,3 +196,5 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 # specialty views
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'       
+
+alias cat='exa'
