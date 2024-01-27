@@ -200,3 +200,7 @@ alias lt='exa --tree --level=2'
 alias cat='bat'
 
 alias du='duf'
+
+mygit() {
+  (cd "/home/jacoba/jacoba_dot" && git status)
+}
