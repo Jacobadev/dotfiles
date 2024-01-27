@@ -123,7 +123,8 @@ alias vm-off="sudo systemctl stop libvirtd.service"
 alias vim="lvim"
 alias nvim="lvim"
 alias musica="ncmpcpp"
-
+alias ls='exa --no-time'
+alias cat='bat '
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
 
@@ -138,6 +139,7 @@ export DOTS=$HOME/jacoba_dot/dotfiles/home/jacoba/
 export XDG_CONFIG_HOME=$HOME/.config
 export GITHUB_TOKEN=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
 
+export ls
 # Dotdrop Git
 
 export DOTREPO=$HOME/jacoba_dot
@@ -170,7 +172,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
   fi
 fi
 
-# export PYENV_ROOT="$HOME/.pyenv"
+# export PYENV_ROOT="$HOME/.pyenv"/
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
@@ -185,3 +187,14 @@ fi
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # SCRIPTS
+#
+alias ls='exa'                                                          # ls
+alias l='exa -lbF --git'                                                # list, size, type, git
+alias ll='exa -lbGF --git'                                             # long list
+alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+
+# specialty views
+alias lS='exa -1'                                                              # one column, just names
+alias lt='exa --tree --level=2'       
