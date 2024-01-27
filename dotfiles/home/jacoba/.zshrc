@@ -201,3 +201,6 @@ alias cat='bat'
 
 alias du='duf'
 
+function mygit() {
+  (cd "/home/jacoba/jacoba_dot" && git status)
+}
