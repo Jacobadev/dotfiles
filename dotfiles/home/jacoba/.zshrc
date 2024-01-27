@@ -144,7 +144,7 @@ export DOTREPO=$HOME/jacoba_dot
 
 alias dotdrop="$DOTREPO/dotdrop.sh"
 alias dotgit="git -C $DOTREPO"
-alias dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push"
+alias dotsync="dotdrop update && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
 
 
 bindkey  "^[[H"   beginning-of-line
