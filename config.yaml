@@ -1,25 +1,24 @@
 actions:
   post:
-    loginstall: "echo {{@@ _dotfile_abs_src @@}} installed to {{@@ _dotfile_abs_dst @@}} >> {0}"
-
+    loginstall: echo {{@@ _dotfile_abs_src @@}} installed to {{@@ _dotfile_abs_dst
+      @@}} >> {0}
 config:
   backup: true
   banner: true
   create: true
   dotpath: dotfiles
   default_actions:
-    - loginstall "/tmp/dotdrop-installation.log"
+  - loginstall "/tmp/dotdrop-installation.log"
   keepdot: false
   link_dotfile_default: nolink
   link_on_import: nolink
   longkey: false
   import_variables:
-    - variables.d/myvars.yaml
+  - variables.d/myvars.yaml
 
 options:
   confpath: ~/.dotfiles
   tmpdir: ~/dotdrop_temp
-
 dotfiles:
   f_zshrc:
     src: home/jacoba/.zshrc
@@ -30,10 +29,17 @@ dotfiles:
   d_screenlayout:
     src: home/jacoba/.screenlayout
     dst: /home/jacoba/.screenlayout
-
+  d_bspwm:
+    src: config/bspwm
+    dst: ~/.config/bspwm
+  d_lvim:
+    src: config/lvim
+    dst: ~/.config/lvim
 profiles:
   archlinux:
     dotfiles:
-      - f_zshrc
-      - f_gitconfig
-      - d_screenlayout
+    - f_zshrc
+    - f_gitconfig
+    - d_screenlayout
+    - d_bspwm
+    - d_lvim
