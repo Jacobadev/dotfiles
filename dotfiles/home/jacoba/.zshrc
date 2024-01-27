@@ -14,7 +14,6 @@ export XDG_CONFIG_HOME="/home/jacoba/.config"
 if [ -d "$HOME/.local/bin" ] ;
   then PATH="$HOME/.local/bin:$PATH"
 fi
-
 #  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
 #  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤ 
 #  ┴─┘└─┘┴ ┴─┴┘  └─┘┘└┘└─┘┴┘└┘└─┘
@@ -115,12 +114,10 @@ fi
 #  ├─┤│  │├─┤└─┐
 #  ┴ ┴┴─┘┴┴ ┴└─┘
 alias mirrors="sudo reflector --verbose --latest 5 --country 'United States' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
-
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias mantenimiento="yay -Sc && sudo pacman -Scc"
 alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
 alias update="paru -Syu --nocombinedupgrade"
-
 alias vm-on="sudo systemctl start libvirtd.service"
 alias vm-off="sudo systemctl stop libvirtd.service"
 alias vim="lvim"
@@ -137,7 +134,8 @@ alias ll='lsd -la --group-directories-first'
 setxkbmap -model abnt2 -layout br -variant abnt2
 export BSP=$HOME/.config/bspwm/bspwmrc
 export KBD=$HOME/.config/bspwm/sxhkdrc
-
+export DOTS=$HOME/jacoba_dot/dotfiles/home/jacoba/
+export XDG_CONFIG_HOME=$HOME/.config
 bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
@@ -150,3 +148,13 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+#
+## Inicia o agente SSH, se não estiver em execução
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)" > /dev/null 2>&1
+
+  # Adiciona a chave SSH se ainda não estiver adicionada
+  if ! ssh-add -L | grep -q "$HOME/.ssh/id_jacoba"; then
+    ssh-add $HOME/.ssh/id_jacoba > /dev/null 2>&1
+  fi
+fi
