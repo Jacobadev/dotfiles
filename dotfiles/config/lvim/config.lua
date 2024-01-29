@@ -12,12 +12,16 @@ else
   py_path = vim.g.python3_host_prog
 end
 
+
+
+require("lvim.lsp.manager").setup("mdformat")
 require("lvim.lsp.manager").setup("biome")
 require("lvim.lsp.manager").setup("tsserver")
 require("lvim.lsp.manager").setup("tailwindcss")
 require("lvim.lsp.manager").setup("emmet_ls")
 require("lvim.lsp.manager").setup("cssls")
-require("lvim.lsp.manager").setup("marksman")
+require("lvim.lsp.manager").setup("marksman"
+)
 require 'lspconfig'.pylsp.setup {
   settings = {
     pylsp = {
