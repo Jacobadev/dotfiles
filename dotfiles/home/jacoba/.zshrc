@@ -192,3 +192,4 @@ alias du='duf'
 function mygit() {
   (cd "/home/jacoba/jacoba_dot" && git status)
 }
+alias nvim2="nvim -u ~/.config/nvim/init.lua"
