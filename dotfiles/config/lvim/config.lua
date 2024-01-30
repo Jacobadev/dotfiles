@@ -14,6 +14,7 @@ end
 
 
 
+require("lvim.lsp.manager").setup("clangd")
 require("lvim.lsp.manager").setup("mdformat")
 require("lvim.lsp.manager").setup("biome")
 require("lvim.lsp.manager").setup("tsserver")

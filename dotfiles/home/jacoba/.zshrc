@@ -113,6 +113,9 @@ fi
 #  ┌─┐┬  ┬┌─┐┌─┐
 #  ├─┤│  │├─┤└─┐
 #  ┴ ┴┴─┘┴┴ ┴└─┘
+alias vim="lvim"
+alias nvim="lvim"
+alias lvim="lvim"
 alias mirrors="sudo reflector --verbose --latest 5 --country 'United States' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
 alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias mantenimiento="yay -Sc && sudo pacman -Scc"
@@ -120,11 +123,10 @@ alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
 alias update="paru -Syu --nocombinedupgrade"
 alias vm-on="sudo systemctl start libvirtd.service"
 alias vm-off="sudo systemctl stop libvirtd.service"
-alias vim="lvim"
-alias nvim="lvim"
 alias musica="ncmpcpp"
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
+
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
@@ -174,8 +176,8 @@ export PYENV_ROOT="$HOME/.pyenv"/
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-alias ls='exa'                                                          # ls
-alias l='exa -lbF --git'                                                # list, size, type, git
+alias l='exa'                                                          # ls
+alias ls='exa -lah'
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
@@ -184,12 +186,8 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 # specialty views
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'       
-
 alias cat='bat'
 
+alias cater='cat'
 alias du='duf'
 
-function mygit() {
-  (cd "/home/jacoba/jacoba_dot" && git status)
-}
-alias nvim2="nvim -u ~/.config/nvim/init.lua"
