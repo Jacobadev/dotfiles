@@ -21,8 +21,7 @@ require("lvim.lsp.manager").setup("tsserver")
 require("lvim.lsp.manager").setup("tailwindcss")
 require("lvim.lsp.manager").setup("emmet_ls")
 require("lvim.lsp.manager").setup("cssls")
-require("lvim.lsp.manager").setup("marksman"
-)
+require("lvim.lsp.manager").setup("marksman")
 require 'lspconfig'.pylsp.setup {
   settings = {
     pylsp = {

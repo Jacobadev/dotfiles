@@ -21,7 +21,7 @@ fi
 
 # SOURCES
 
-source .zshenv
+source $HOME/.zshenv
 
 #  ┬  ┌─┐┌─┐┌┬┐  ┌─┐┌┐┌┌─┐┬┌┐┌┌─┐
 #  │  │ │├─┤ ││  ├┤ ││││ ┬││││├┤ 
@@ -176,8 +176,12 @@ alias cat='bat --theme="OneHalfDark" --style="full" --language='py''
 alias du='duf'
 # DOCKER
 
-alias d='docker $*'
-alias dc='docker compose $*'
+alias d='docker'
+alias dc='docker compose'
+alias dcu='docker compose up'
+alias dcub='docker compose up --build'
+alias dcd='docker compose down'
+
 
 ### NAVIGATIONS
 # CD
@@ -231,15 +235,54 @@ alias th='tail -n40 < <(history 1 | cat)'
 
 alias al="alias | cat"
 alias alr="alias | rg"
-# VIM
+# VIM LVIM
 alias vim="lvim"
 alias nvim="lvim"
+
+
 
 
 ### RUN AGENTS
 eval "$(zoxide init zsh)"
 
+### CLIP
 alias clip="xclip -sel clip <"
+### POETRY
 alias psh="poetry shell"
-
+alias pa="poetry add"
+### FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+### NVM
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+source /usr/share/nvm/nvm.sh
+source /usr/share/nvm/bash_completion
+source /usr/share/nvm/install-nvm-exec
+
+
+### TMUX
+alias t='tmux attach || tmux new-session'
+
+# Attaches tmux to a session (example: ta portal)
+alias ta='tmux attach -t'
+### todas menos a atual
+alias tmks='tmux kill-session -a'
+alias tks='tmux kill-server'
+# Creates a new session
+alias tn='tmux new-session'
+alias tmk='tmux kill-session -t'
+# Lists all ongoing sessions
+alias tl='tmux list-sessions'
+
+###
+alias c='clear'
+
+### CONFIGS
+## ZSH
+alias zs="lvim ~/.zshrc"
+alias sz="source ~/.zshrc"
+
+### BSP KBD
+alias bsp="vim ~/.config/bspwm/bspwmrc"
+alias kbd="vim ~/.config/bspwm/sxhkdrc"
+
+

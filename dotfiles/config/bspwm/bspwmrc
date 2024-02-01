@@ -86,6 +86,9 @@ sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 # Launch stalonetray
 [[ "$RICETHEME" != "z0mbi3" ]] && stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc & sleep 0.1 && xdo hide -N stalonetray && touch "/tmp/syshide.lock"
 
+#random wallpaper
+feh -z --no-fehbg --bg-fill ${rice_dir}/walls
+
 # Launch dunst notification daemon
 dunst -config "$HOME"/.config/bspwm/dunstrc &
 
