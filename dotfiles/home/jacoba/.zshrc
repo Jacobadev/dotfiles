@@ -119,12 +119,6 @@ fi
 #  ┌─┐┬  ┬┌─┐┌─┐
 #  ├─┤│  │├─┤└─┐
 #  ┴ ┴┴─┘┴┴ ┴└─┘
-alias vim="lvim"
-alias nvim="lvim"
-alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
-alias ls='lsd -a --group-directories-first'
-alias ll='lsd -la --group-directories-first'
-
 
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
@@ -136,12 +130,6 @@ export KBD=$HOME/.config/bspwm/sxhkdrc
 export DOTS=$HOME/jacoba_dot/dotfiles/home/jacoba/
 export XDG_CONFIG_HOME=$HOME/.config
 
-# Dotdrop Git
-
-export JACOBA_DOT=$HOME/jacoba_dot
-alias dotdrop="$JACOBA_DOT/dotdrop.sh"
-alias dotgit="git -C $JACOBA_DOT"
-alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
 # Automaticamnete gerar pacman -Qq > $HOME/scripts/pacotes.txt
 # Tirar dotgit e dotgit dos aliases
 ## TODO > chcagem de erros, printar apenas em qual operação deu problema, executar em background, gerar log e mostrar apenas mensagem de conclusão ou falha, rodar de dentro de um servidor, e executar regularmente as 7 da manhã todos so dias
@@ -173,43 +161,74 @@ export PYENV_ROOT="$HOME/.pyenv"/
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-alias l='exa'                                                          # ls
-alias ls='exa -lah'
-alias ll='exa -lbGF --git'                                             # long list
+#  CAT
 
-# specialty views
-alias lS='exa -1 '                                                              # one column, just names
-alias lt='exa --tree --level=2'       
-alias cat='bat'
+alias cat='bat --theme="OneHalfDark" --style="full" --language='py''
+
+# DISK USAGE
 
 alias du='duf'
+# DOCKER
 
 alias d='docker $*'
 alias dc='docker compose $*'
 
-
+### NAVIGATIONS
+# CD
+#
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
+## LS
+#
+alias lS='exa -1 '                                                              # one column, just names
+alias lt='exa --tree --level=2'       
+alias l='exa'                                                          # ls
+alias ls='exa -lah'
+alias ll='exa -lbGF --git'                                             # long list
 
+
+
+# Dotdrop Git
+
+export JACOBA_DOT=$HOME/jacoba_dot
+alias dotdrop="$JACOBA_DOT/dotdrop.sh"
+alias dotgit="git -C $JACOBA_DOT"
+alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
+#
+
+#### GIT
+alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun
 alias gl='git pull --prune'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=50"
 alias gp='git push origin HEAD'
-
-# Remove `+` and `-` from start of diff lines; just rely upon color.
+alias gsu='git push --set-upstream'
 alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
-
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
 alias gcb='git copy-branch-name'
 alias gb='git branch'
-alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
+
+#  HISTORY
+
+alias h='history 1 | rg'
+alias th='tail -n60 < <(history 1 | cat)'
+
+## ALIAS
+
+alias al="alias | cat"
+# VIM
+alias vim="lvim"
+alias nvim="lvim"
+
+
+### RUN AGENTS
 eval "$(jump shell)"
 eval "$(zoxide init zsh)"
