@@ -2,6 +2,7 @@
 # TODO
 - Configurar variaveis de ambiente necessarias apra o ambiente no arquivo 
 myvars.yaml
+##### Instalar docker engine e compose 
 - Gerar uma lista de instalações do yay e instala-los automaticamente
 - Fazer script para instalação dos seguintes pacotes:
 - pyenv
