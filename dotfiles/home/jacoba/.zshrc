@@ -142,9 +142,9 @@ export GITHUB_TOKEN=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
 export ls
 # Dotdrop Git
 
-export DOTREPO=$HOME/jacoba_dot
-alias dotdrop="$DOTREPO/dotdrop.sh"
-alias dotgit="git -C $DOTREPO"
+export JACOBA_DOT=$HOME/jacoba_dot
+alias dotdrop="$JACOBA_DOT/dotdrop.sh"
+alias dotgit="git -C $JACOBA_DOT"
 alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
 #
 ## TODO > chcagem de erros, printar apenas em qual operação deu problema, executar em background, gerar log e mostrar apenas mensagem de conclusão ou falha, rodar de dentro de um servidor, e executar regularmente as 7 da manhã todos so dias
