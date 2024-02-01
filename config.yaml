@@ -35,10 +35,6 @@ dotfiles:
   d_lvim:
     src: config/lvim
     dst: ~/.config/lvim
-  d_ssh:
-    src: ssh
-    dst: ~/.ssh
-    chmod: '700'
   d_scripts:
     src: scripts
     dst: ~/scripts
@@ -53,6 +49,5 @@ profiles:
     - d_screenlayout
     - d_bspwm
     - d_lvim
-    - d_ssh
     - d_scripts
     - f_pacotes.txt

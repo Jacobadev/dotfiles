@@ -233,3 +233,6 @@ alias nvim="lvim"
 ### RUN AGENTS
 eval "$(jump shell)"
 eval "$(zoxide init zsh)"
+
+alias clip="xclip -sel clip <"
+alias psh="poetry shell"
