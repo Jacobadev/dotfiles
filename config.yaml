@@ -1,14 +1,8 @@
-actions:
-  post:
-    loginstall: echo {{@@ _dotfile_abs_src @@}} installed to {{@@ _dotfile_abs_dst
-      @@}} >> {0}
 config:
   backup: true
   banner: true
   create: true
   dotpath: dotfiles
-  default_actions:
-  - loginstall "/tmp/dotdrop-installation.log"
   keepdot: false
   link_dotfile_default: nolink
   link_on_import: nolink
@@ -42,7 +36,7 @@ dotfiles:
     src: scripts/pacotes.txt
     dst: ~/scripts/pacotes.txt
 profiles:
-  archlinux:
+  arch:
     dotfiles:
     - f_zshrc
     - f_gitconfig

@@ -123,12 +123,13 @@ fi
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
 #  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
-# $HOME/.local/bin/colorscript -r
+$HOME/.local/bin/colorscript -r
 setxkbmap -model abnt2 -layout br -variant abnt2
 export BSP=$HOME/.config/bspwm/bspwmrc
 export KBD=$HOME/.config/bspwm/sxhkdrc
 export DOTS=$HOME/jacoba_dot/dotfiles/home/jacoba/
 export XDG_CONFIG_HOME=$HOME/.config
+export PATH=$PATH:$HOME/.cargo/bin
 
 # Automaticamnete gerar pacman -Qq > $HOME/scripts/pacotes.txt
 # Tirar dotgit e dotgit dos aliases
@@ -231,8 +232,9 @@ alias nvim="lvim"
 
 
 ### RUN AGENTS
-eval "$(jump shell)"
 eval "$(zoxide init zsh)"
 
 alias clip="xclip -sel clip <"
 alias psh="poetry shell"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
