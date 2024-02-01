@@ -42,6 +42,9 @@ dotfiles:
   d_scripts:
     src: scripts
     dst: ~/scripts
+  f_pacotes.txt:
+    src: scripts/pacotes.txt
+    dst: ~/scripts/pacotes.txt
 profiles:
   archlinux:
     dotfiles:
@@ -52,3 +55,4 @@ profiles:
     - d_lvim
     - d_ssh
     - d_scripts
+    - f_pacotes.txt
