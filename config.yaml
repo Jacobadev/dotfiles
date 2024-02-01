@@ -35,6 +35,10 @@ dotfiles:
   d_lvim:
     src: config/lvim
     dst: ~/.config/lvim
+  d_ssh:
+    src: ssh
+    dst: ~/.ssh
+    chmod: '700'
 profiles:
   archlinux:
     dotfiles:
@@ -43,3 +47,4 @@ profiles:
     - d_screenlayout
     - d_bspwm
     - d_lvim
+    - d_ssh
