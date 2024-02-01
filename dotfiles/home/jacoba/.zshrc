@@ -1,7 +1,11 @@
+
 #  ╔═╗╔═╗╦ ╦╦═╗╔═╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗	- z0mbi3
 #a aa ╔═╝╚═╗╠═╣╠╦╝║    ║  ║ ║║║║╠╣ ║║ ╦	- https://github.com/gh0stzk/dotfiles
 #    a╚═╝╚═╝╩ ╩╩╚═╚═╝  ╚═╝╚═╝╝╚╝╚  ╩╚═╝	- My zsh conf
 
+# 
+# SOURCES
+#
 #  ┬  ┬┌─┐┬─┐┌─┐
 #  └┐┌┘├─┤├┬┘└─┐
 #   └┘ ┴ ┴┴└─└─┘
@@ -82,6 +86,8 @@ function dir_icon {
 
 PS1='%B%F{blue}%f%b  %B%F{magenta}%n%f%b $(dir_icon)  %B%F{red}%~%f%b${vcs_info_msg_0_} %(?.%B%F{green}.%F{red})%f%b '
 
+
+setxkbmap -layout br -variant abnt2
 #  ┌─┐┬  ┬ ┬┌─┐┬┌┐┌┌─┐
 #  ├─┘│  │ ││ ┬││││└─┐
 #  ┴  ┴─┘└─┘└─┘┴┘└┘└─┘
@@ -115,15 +121,7 @@ fi
 #  ┴ ┴┴─┘┴┴ ┴└─┘
 alias vim="lvim"
 alias nvim="lvim"
-alias lvim="lvim"
-alias mirrors="sudo reflector --verbose --latest 5 --country 'United States' --age 6 --sort rate --save /etc/pacman.d/mirrorlist"
-alias grub-update="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-alias mantenimiento="yay -Sc && sudo pacman -Scc"
 alias purga="sudo pacman -Rns $(pacman -Qtdq) ; sudo fstrim -av"
-alias update="paru -Syu --nocombinedupgrade"
-alias vm-on="sudo systemctl start libvirtd.service"
-alias vm-off="sudo systemctl stop libvirtd.service"
-alias musica="ncmpcpp"
 alias ls='lsd -a --group-directories-first'
 alias ll='lsd -la --group-directories-first'
 
@@ -137,16 +135,14 @@ export BSP=$HOME/.config/bspwm/bspwmrc
 export KBD=$HOME/.config/bspwm/sxhkdrc
 export DOTS=$HOME/jacoba_dot/dotfiles/home/jacoba/
 export XDG_CONFIG_HOME=$HOME/.config
-export GITHUB_TOKEN=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
 
-export ls
 # Dotdrop Git
 
 export JACOBA_DOT=$HOME/jacoba_dot
 alias dotdrop="$JACOBA_DOT/dotdrop.sh"
 alias dotgit="git -C $JACOBA_DOT"
 alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
-#
+# Tirar dotgit e dotgit dos aliases
 ## TODO > chcagem de erros, printar apenas em qual operação deu problema, executar em background, gerar log e mostrar apenas mensagem de conclusão ou falha, rodar de dentro de um servidor, e executar regularmente as 7 da manhã todos so dias
 
 bindkey  "^[[H"   beginning-of-line
@@ -179,15 +175,37 @@ eval "$(pyenv init -)"
 alias l='exa'                                                          # ls
 alias ls='exa -lah'
 alias ll='exa -lbGF --git'                                             # long list
-alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
 
 # specialty views
-alias lS='exa -1'                                                              # one column, just names
+alias lS='exa -1 '                                                              # one column, just names
 alias lt='exa --tree --level=2'       
 alias cat='bat'
 
-alias cater='cat'
 alias du='duf'
 
+alias d='docker $*'
+alias dc='docker compose $*'
+
+
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+alias gl='git pull --prune'
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gp='git push origin HEAD'
+
+# Remove `+` and `-` from start of diff lines; just rely upon color.
+alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
+
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gcb='git copy-branch-name'
+alias gb='git branch'
+alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+alias gac='git add -A && git commit -m'
+alias ge='git-edit-new'
