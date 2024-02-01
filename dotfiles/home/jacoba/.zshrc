@@ -142,6 +142,7 @@ export JACOBA_DOT=$HOME/jacoba_dot
 alias dotdrop="$JACOBA_DOT/dotdrop.sh"
 alias dotgit="git -C $JACOBA_DOT"
 alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
+# Automaticamnete gerar pacman -Qq > $HOME/scripts/pacotes.txt
 # Tirar dotgit e dotgit dos aliases
 ## TODO > chcagem de erros, printar apenas em qual operação deu problema, executar em background, gerar log e mostrar apenas mensagem de conclusão ou falha, rodar de dentro de um servidor, e executar regularmente as 7 da manhã todos so dias
 
@@ -211,3 +212,4 @@ alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
 eval "$(jump shell)"
+eval "$(zoxide init zsh)"
