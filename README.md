@@ -1,4 +1,5 @@
 <h1 align="center">Arch linux</h1>
+
 # TODO
 - Configurar variaveis de ambiente necessarias apra o ambiente no arquivo 
 myvars.yaml
