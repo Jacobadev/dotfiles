@@ -219,11 +219,12 @@ alias ge='git-edit-new'
 #  HISTORY
 
 alias h='history 1 | rg'
-alias th='tail -n60 < <(history 1 | cat)'
+alias th='tail -n40 < <(history 1 | cat)'
 
 ## ALIAS
 
 alias al="alias | cat"
+alias alr="alias | rg"
 # VIM
 alias vim="lvim"
 alias nvim="lvim"
