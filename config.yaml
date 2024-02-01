@@ -39,6 +39,9 @@ dotfiles:
     src: ssh
     dst: ~/.ssh
     chmod: '700'
+  d_scripts:
+    src: scripts
+    dst: ~/scripts
 profiles:
   archlinux:
     dotfiles:
@@ -48,3 +51,4 @@ profiles:
     - d_bspwm
     - d_lvim
     - d_ssh
+    - d_scripts
