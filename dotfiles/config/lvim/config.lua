@@ -12,8 +12,7 @@ else
   py_path = vim.g.python3_host_prog
 end
 
-
-
+require 'lspconfig'.pyre.setup {}
 require("lvim.lsp.manager").setup("clangd")
 require("lvim.lsp.manager").setup("mdformat")
 require("lvim.lsp.manager").setup("biome")
@@ -22,32 +21,6 @@ require("lvim.lsp.manager").setup("tailwindcss")
 require("lvim.lsp.manager").setup("emmet_ls")
 require("lvim.lsp.manager").setup("cssls")
 require("lvim.lsp.manager").setup("marksman")
-require 'lspconfig'.pylsp.setup {
-  settings = {
-    pylsp = {
-      plugins = {
-
-        flake8 = { enabled = true, maxLineLenght = 120 },
-        pycodestyle = { enabled = false },
-        black = { enabled = true },
-        autopep8 = { enabled = false },
-        yapf = { enabled = false },
-        -- linter options
-        pylint = { enabled = false, executable = "pylint" },
-        ruff = { enabled = false },
-        pyflakes = { enabled = false },
-        -- type checker
-        -- auto-completion options
-        jedi_completion = { fuzzy = true },
-        -- import sorting
-        isort = { enabled = true }, }
-    }
-  }, flags = {
-  debounce_text_changes = 200,
-},
-  capabilities = capabilities,
-}
-
 
 require 'lspconfig'.lua_ls.setup {
   on_init = function(client)
