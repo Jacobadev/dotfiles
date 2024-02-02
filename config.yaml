@@ -32,9 +32,6 @@ dotfiles:
   d_scripts:
     src: scripts
     dst: ~/scripts
-  f_pacotes.txt:
-    src: scripts/pacotes.txt
-    dst: ~/scripts/pacotes.txt
 profiles:
   arch:
     dotfiles:
@@ -44,4 +41,3 @@ profiles:
     - d_bspwm
     - d_lvim
     - d_scripts
-    - f_pacotes.txt
