@@ -66,8 +66,8 @@ alias th='tail -n40 < <(history 1 | cat)'
 alias al="alias | cat"
 alias alr="alias | rg"
 # VIM LVIM
-alias vim="lvim"
-alias nvim="lvim"
+
+
 
 
 

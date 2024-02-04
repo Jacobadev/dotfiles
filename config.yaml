@@ -26,12 +26,12 @@ dotfiles:
   d_bspwm:
     src: config/bspwm
     dst: ~/.config/bspwm
-  d_lvim:
-    src: config/lvim
-    dst: ~/.config/lvim
   d_scripts:
     src: scripts
     dst: ~/scripts
+  d_nvim:
+    src: config/nvim
+    dst: ~/.config/nvim
 profiles:
   arch:
     dotfiles:
@@ -39,5 +39,5 @@ profiles:
     - f_gitconfig
     - d_screenlayout
     - d_bspwm
-    - d_lvim
     - d_scripts
+    - d_nvim
