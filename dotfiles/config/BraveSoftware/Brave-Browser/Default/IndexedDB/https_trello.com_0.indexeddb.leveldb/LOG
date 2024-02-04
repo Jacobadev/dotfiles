@@ -1,0 +1,6 @@
+2024/02/01-19:55:14.765 7680 Creating DB /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_trello.com_0.indexeddb.leveldb since it was missing.
+2024/02/01-19:55:14.769 7680 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_trello.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/01-20:16:35.769 7681 Level-0 table #5: started
+2024/02/01-20:16:35.772 7681 Level-0 table #5: 12475 bytes OK
+2024/02/01-20:16:35.775 7681 Delete type=0 #3
+2024/02/01-20:16:35.775 7681 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

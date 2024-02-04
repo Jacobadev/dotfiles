@@ -1,0 +1,6 @@
+2024/02/04-17:36:24.709 4 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2024/02/04-17:36:24.711 4 Recovering log #275
+2024/02/04-17:36:24.711 4 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000275.log 
+2024/02/04-17:38:54.611 6 Level-0 table #279: started
+2024/02/04-17:38:54.614 6 Level-0 table #279: 22056 bytes OK
+2024/02/04-17:38:54.618 6 Delete type=0 #275

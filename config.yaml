@@ -41,6 +41,10 @@ dotfiles:
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
+  d_default:
+    src: config/BraveSoftware/Brave-Browser/Default
+    dst: ~/.config/BraveSoftware/Brave-Browser/Default
+    chmod: '700'
 profiles:
   arch:
     dotfiles:
@@ -53,3 +57,4 @@ profiles:
     - f_tmux.conf
     - f_tmux.conf.local
     - d_alacritty
+    - d_default
