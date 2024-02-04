@@ -38,6 +38,9 @@ dotfiles:
   f_tmux.conf.local:
     src: tmux.conf.local
     dst: ~/.tmux.conf.local
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
 profiles:
   arch:
     dotfiles:
@@ -49,3 +52,4 @@ profiles:
     - d_nvim
     - f_tmux.conf
     - f_tmux.conf.local
+    - d_alacritty
