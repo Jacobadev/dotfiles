@@ -141,4 +141,5 @@ SCRIPTS="$HOME/scripts"
  . $SCRIPTS/alias.sh
  . $SCRIPTS/.zshenv
 
-
+export TERM="xterm-256color"
+export EDITOR="nvim"

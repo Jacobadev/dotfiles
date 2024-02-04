@@ -2,8 +2,8 @@
 #
 #  ██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗██████╗  ██████╗
 #  ██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║██╔══██╗██╔════╝
-#  ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║██████╔╝██║     
-#  ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║██╔══██╗██║     
+#  ██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║██████╔╝██║
+#  ██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║██╔══██╗██║
 #  ██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║██║  ██║╚██████╗
 #  ╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝
 #	- z0mbi3
@@ -11,11 +11,10 @@
 #	- z0mbi3.zk@protonmail.com
 #
 
-read -r RICETHEME < "$HOME"/.config/bspwm/.rice
+read -r RICETHEME <"$HOME"/.config/bspwm/.rice
 export RICETHEME
 PATH="$HOME/.config/bspwm/scripts:$PATH"
 rice_dir="$HOME/.config/bspwm/rices/$RICETHEME"
-
 
 ## Fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -24,17 +23,14 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #  ║║║║ ║╠╦╝╠╩╗╚═╗╠═╝╠═╣║  ║╣ ╚═╗
 #  ╚╩╝╚═╝╩╚═╩ ╩╚═╝╩  ╩ ╩╚═╝╚═╝╚═╝
 
-
-
 if [[ $(xrandr -q | grep "HDMI-0 connected") ]]; then
-    bspc monitor "VGA-0" -d '1' '2' '3' '4'
-    bspc monitor "HDMI-0" -d '5' '6'
+	bspc monitor "VGA-0" -d '1' '2' '3' '4'
+	bspc monitor "HDMI-0" -d '5' '6'
 else
-    bspc monitor "VGA-0" -d '1' '2' '3' '4' '5'
+	bspc monitor "VGA-0" -d '1' '2' '3' '4' '5'
 fi
-	# Default 1 monitor with 6 workspaces
-	## For two or three monitors configuration see https://github.com/gh0stzk/dotfiles/wiki/Two-or-more-monitors-setup
-
+# Default 1 monitor with 6 workspaces
+## For two or three monitors configuration see https://github.com/gh0stzk/dotfiles/wiki/Two-or-more-monitors-setup
 
 #  ╔╗ ╔═╗╔═╗╦ ╦╔╦╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗
 #  ╠╩╗╚═╗╠═╝║║║║║║  ║  ║ ║║║║╠╣ ║║ ╦
@@ -42,25 +38,27 @@ fi
 
 bspc config external_rules_command "$HOME"/.config/bspwm/scripts/ExternalRules
 
-bspc config window_gap					6
-bspc config split_ratio					0.51
-bspc config single_monocle				true
-bspc config borderless_monocle			false
-bspc config gapless_monocle				false
+bspc config window_gap 6
+bspc config split_ratio 0.51
+bspc config single_monocle true
+bspc config borderless_monocle false
+bspc config gapless_monocle false
 
-bspc config focus_follows_pointer		true
-bspc config pointer_follows_focus		false
-bspc config pointer_motion_interval		5
-bspc config pointer_modifier			mod4
-bspc config pointer_action1				move
-bspc config pointer_action2				resize_side
-bspc config pointer_action3				resize_corner
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus false
+bspc config pointer_motion_interval 5
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
 
 #bspc wm --adopt-orphans
-bspc rule -a scratch sticky=on state=floating focus=on
+bspc rule -a discord desktop='^4'
+bspc rule -a nvim desktop='^2'
+bspc rule -a brave desktop='^1'
 
 #  ╔═╗╦ ╦╔╦╗╔═╗╔═╗╔╦╗╔═╗╦═╗╔╦╗
-#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║ 
+#  ╠═╣║ ║ ║ ║ ║╚═╗ ║ ╠═╣╠╦╝ ║
 #  ╩ ╩╚═╝ ╩ ╚═╝╚═╝ ╩ ╩ ╩╩╚═ ╩
 
 # Set system vars for polybar
@@ -69,11 +67,12 @@ bspc rule -a scratch sticky=on state=floating focus=on
 # Terminate already running polybar, stalonetray, sxhkd and dunst instances
 processes=("sxhkd" "polybar" "stalonetray" "dunst" "eww.*bar")
 
-	for process in "${processes[@]}"; do
-		if pgrep -f "$process"; then
-			pkill -9 -f "$process" > /dev/null; sleep 0.1
-		fi
-	done
+for process in "${processes[@]}"; do
+	if pgrep -f "$process"; then
+		pkill -9 -f "$process" >/dev/null
+		sleep 0.1
+	fi
+done
 
 # Load bspwm conf, colors, dunst, bars and/or eww widgets
 . ${rice_dir}/Theme.sh
@@ -84,7 +83,8 @@ unclutter iddle 2 &
 sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 
 # Launch stalonetray
-[[ "$RICETHEME" != "z0mbi3" ]] && stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc & sleep 0.1 && xdo hide -N stalonetray && touch "/tmp/syshide.lock"
+[[ "$RICETHEME" != "z0mbi3" ]] && stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc &
+sleep 0.1 && xdo hide -N stalonetray && touch "/tmp/syshide.lock"
 
 #random wallpaper
 feh -z --no-fehbg --bg-fill ${rice_dir}/walls
@@ -101,7 +101,7 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 # Fix cursor
 xsetroot -cursor_name left_ptr
 
-# Launch picom // If you have old hardware or encounter problems 
+# Launch picom // If you have old hardware or encounter problems
 # uncomment the picom "--legacy-backends" line and comment the current one.
 pidof -q picom || { picom -b --config "$HOME"/.config/bspwm/picom.conf & }
 #pidof -q picom || { picom --legacy-backends --config "$HOME"/.config/bspwm/picom.conf & }

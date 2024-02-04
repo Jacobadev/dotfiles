@@ -7,9 +7,27 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
+{
+  "christoomey/vim-tmux-navigator",
+  cmd = {
+    "TmuxNavigateLeft",
+    "TmuxNavigateDown",
+    "TmuxNavigateUp",
+    "TmuxNavigateRight",
+    "TmuxNavigatePrevious",
+  },
+  keys = {
+    { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+    { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+    { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+    { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+    { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+  },
+},
     {
         "folke/tokyonight.nvim",
-        lazy = true,
+    priority = 1000,
+    lazy=true,
         opts = {style = "moon",
     },
     },
@@ -22,7 +40,6 @@ return {
     },
 
     -- disable trouble
-    { "folke/trouble.nvim", enabled = false },
 
     -- add symbols-outline
     {
@@ -82,12 +99,11 @@ return {
         "neovim/nvim-lspconfig",
         ---@class PluginLspOpts
         opts = {
-automatic_installation= false,
             ---@type lspconfig.options
             servers = {
                 -- pyright will be automatically installed with mason and loaded with lspconfig
                 pyright = {},
-            },
+            }
         },
     },
 
@@ -148,6 +164,7 @@ automatic_installation= false,
                 "typescript",
                 "vim",
                 "yaml",
+        "go",
             },
         },
     },
@@ -195,7 +212,7 @@ automatic_installation= false,
     {
         "williamboman/mason.nvim",
         opts = {
-      automatic_installation = false,
+      automatic_installation = true,
             ensure_installed = {
                 "stylua",
                 "shellcheck",

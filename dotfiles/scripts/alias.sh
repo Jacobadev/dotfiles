@@ -1,4 +1,3 @@
-
 alias cat='bat --theme="OneHalfDark" --style="full" --language='py''
 
 # DISK USAGE
@@ -12,7 +11,6 @@ alias dcu='docker compose up'
 alias dcub='docker compose up --build'
 alias dcd='docker compose down'
 
-
 ### NAVIGATIONS
 # CD
 #
@@ -24,13 +22,11 @@ alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 ## LS
 #
-alias lS='exa -1 '                                                              # one column, just names
-alias lt='exa --tree --level=2'       
-alias l='exa'                                                          # ls
+alias lS='exa -1 ' # one column, just names
+alias lt='exa --tree --level=2'
+alias l='exa' # ls
 alias ls='exa -lah'
-alias ll='exa -lbGF --git'                                             # long list
-
-
+alias ll='exa -lbGF --git' # long list
 
 # Dotdrop Git
 
@@ -55,7 +51,6 @@ alias gb='git branch'
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
-
 #  HISTORY
 
 alias h='history 1 | rg'
@@ -67,10 +62,7 @@ alias al="alias | cat"
 alias alr="alias | rg"
 # VIM LVIM
 
-
-
-
-
+alias vim="nvim"
 ### RUN AGENTS
 
 ### CLIP
@@ -84,7 +76,6 @@ alias psh="poetry shell"
 source /usr/share/nvm/nvm.sh
 source /usr/share/nvm/bash_completion
 source /usr/share/nvm/install-nvm-exec
-
 
 ### TMUX
 alias t='tmux attach || tmux new-session'
@@ -111,7 +102,6 @@ alias sz="source ~/.zshrc"
 ### BSP KBD
 alias bsp="vim ~/.config/bspwm/bspwmrc"
 alias kbd="vim ~/.config/bspwm/sxhkdrc"
-
 
 ## POETRY
 

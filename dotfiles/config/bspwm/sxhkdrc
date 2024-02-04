@@ -27,9 +27,9 @@ super + @space
 shift + alt + {b,g,n}
 	OpenApps {--browser,--editor,--filemanager}
 
-# Open lvim
+# Open nvim
 super + v
-	alacritty -e $EDITOR
+	OpenApps --nvim
 
 #|||----- System Keybindings -----|||#
 
@@ -54,7 +54,7 @@ ctrl + alt + End
     sudo systemctl poweroff
 
 ctrl + alt + Delete
-    sudo systemctl reboot
+    reboot
 
 # Hide/Show Bar (Polybar and/or eww)
 super + shift + {h,u}
