@@ -13,10 +13,6 @@
 super + Return
 	OpenApps --terminal
 
-# Open floating Terminal
-super + alt + Return
-	OpenApps --floating
-
 # Application menu
 super + @space
 	OpenApps --menu
@@ -24,8 +20,8 @@ super + @space
 #####
 
 # Apps (browser, editor, filemanager)
-shift + alt + {b,g,n}
-	OpenApps {--browser,--editor,--filemanager}
+shift + alt + {b,n}
+	OpenApps {--browser,--nvim}
 
 # Open nvim
 super + v
@@ -156,7 +152,7 @@ shift + {h,l}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-{alt, super}+ @Tab
+super + @Tab
 	bspc {node,desktop} --focus last
 
 # Change desktop on current monitor
