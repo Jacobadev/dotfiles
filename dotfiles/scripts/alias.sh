@@ -96,7 +96,7 @@ alias c='clear'
 
 ### CONFIGS
 ## ZSH
-alias zs="lvim ~/.zshrc"
+alias zs="vim ~/.zshrc"
 alias sz="source ~/.zshrc"
 
 ### BSP KBD

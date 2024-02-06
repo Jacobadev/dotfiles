@@ -36,8 +36,8 @@ case "$1" in
 --nvim)
 	alacritty -e nvim
 	;;
---fetch)
-	alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=26 window.dimensions.columns=40 -e ~/.local/bin/sysfetch
+--discord)
+	discord
 	;;
 # Apps
 --browser)

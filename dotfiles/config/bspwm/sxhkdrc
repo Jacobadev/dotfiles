@@ -20,8 +20,8 @@ super + @space
 #####
 
 # Apps (browser, editor, filemanager)
-shift + alt + {b,n}
-	OpenApps {--browser,--nvim}
+shift + alt + {b,n, d}
+	OpenApps {--browser,--nvim, --discord}
 
 # Open nvim
 super + v
@@ -121,8 +121,8 @@ ctrl + alt {m,x,s,p}
 	bspc node -g {marked,locked,sticky,private}
 
 # Hide/Unhide Window
-ctrl + alt + h
-	BspHideNode
+# ctrl + alt + h
+# 	BspHideNode
 
 ##### DESKTOP MANAGEMENT
 

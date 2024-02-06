@@ -1,0 +1,6 @@
+2024/02/05-06:42:05.164 63ab Creating DB /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.paypal.com_0.indexeddb.leveldb since it was missing.
+2024/02/05-06:42:05.170 63ab Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.paypal.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/05-06:42:11.792 63ab Level-0 table #5: started
+2024/02/05-06:42:11.794 63ab Level-0 table #5: 3112 bytes OK
+2024/02/05-06:42:11.797 63ab Delete type=0 #3
+2024/02/05-06:42:11.798 63ab Manual compaction at level-0 from (begin) .. (end); will stop at (end)

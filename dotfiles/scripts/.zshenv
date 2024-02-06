@@ -20,3 +20,8 @@ if [ -d "$HOME/.local/bin" ] ;
 fi
 
 eval "$(zoxide init zsh)"
+
+
+export GOROOT=/usr/lib/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
