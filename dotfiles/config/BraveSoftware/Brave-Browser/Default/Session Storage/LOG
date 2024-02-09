@@ -1,3 +1,6 @@
-2024/02/06-17:59:00.180 4 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Session Storage/MANIFEST-000001
-2024/02/06-17:59:00.183 4 Recovering log #130
-2024/02/06-17:59:00.184 4 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Session Storage/000130.log 
+2024/02/09-14:38:00.122 4 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Session Storage/MANIFEST-000001
+2024/02/09-14:38:00.186 4 Recovering log #161
+2024/02/09-14:38:00.203 4 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Session Storage/000161.log 
+2024/02/09-14:43:23.686 6 Level-0 table #166: started
+2024/02/09-14:43:23.689 6 Level-0 table #166: 29357 bytes OK
+2024/02/09-14:43:23.692 6 Delete type=0 #161

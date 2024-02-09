@@ -1,9 +1,3 @@
-2024/02/05-08:45:24.873 63aa Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_github.dev_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/05-08:45:24.873 63aa Recovering log #82
-2024/02/05-08:45:24.873 63aa Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_github.dev_0.indexeddb.leveldb/000082.log 
-2024/02/05-08:45:25.304 63ad Compacting 1@1 + 1@2 files
-2024/02/05-08:45:25.314 63ad Generated table #85@1: 2124 keys, 435179 bytes
-2024/02/05-08:45:25.314 63ad Compacted 1@1 + 1@2 files => 435179 bytes
-2024/02/05-08:45:25.318 63ad compacted to: files[ 0 0 1 0 0 0 0 ]
-2024/02/05-08:45:25.318 63ad Delete type=2 #81
-2024/02/05-08:45:25.318 63ad Delete type=2 #83
+2024/02/08-15:40:53.857 634 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_github.dev_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/08-15:40:53.857 634 Recovering log #95
+2024/02/08-15:40:53.858 634 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_github.dev_0.indexeddb.leveldb/000095.log 

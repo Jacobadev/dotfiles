@@ -1,5 +1,5 @@
 {
-   "checksum": "0871d889e97101ba37f0907a40e9b473",
+   "checksum": "036133d245d44cee4bf905ff7edb1b64",
    "roots": {
       "bookmark_bar": {
          "children": [  ],
@@ -89,10 +89,21 @@
             "name": "How to Customize Tmux Using the Config File",
             "type": "url",
             "url": "https://www.hostinger.com/tutorials/tmux-config"
+         }, {
+            "date_added": "13351890664499429",
+            "date_last_used": "0",
+            "guid": "ae5307de-f976-4850-8dcd-3ace3097d5b9",
+            "id": "16",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "FastAPI - Swagger UI",
+            "type": "url",
+            "url": "http://localhost/docs#/default/register_user_auth_register_post"
          } ],
          "date_added": "13351324481311790",
          "date_last_used": "0",
-         "date_modified": "13351545628139005",
+         "date_modified": "13351890664499429",
          "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
          "id": "2",
          "name": "Outros favoritos",

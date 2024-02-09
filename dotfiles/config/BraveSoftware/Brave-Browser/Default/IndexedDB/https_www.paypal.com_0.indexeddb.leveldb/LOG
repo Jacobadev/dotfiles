@@ -1,3 +1,15 @@
-2024/02/05-06:42:20.915 63aa Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.paypal.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/05-06:42:20.916 63aa Recovering log #4
-2024/02/05-06:42:20.916 63aa Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.paypal.com_0.indexeddb.leveldb/000004.log 
+2024/02/07-18:39:41.435 994b Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.paypal.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/07-18:39:41.435 994b Recovering log #4
+2024/02/07-18:39:41.436 994b Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.paypal.com_0.indexeddb.leveldb/000004.log 
+2024/02/07-18:39:45.362 994c Level-0 table #8: started
+2024/02/07-18:39:45.364 994c Level-0 table #8: 209 bytes OK
+2024/02/07-18:39:45.367 994c Delete type=0 #4
+2024/02/07-18:39:45.367 994c Manual compaction at level-0 from (begin) .. (end); will stop at (end)
+2024/02/07-18:39:45.368 994c Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\x06' @ 227 : 1
+2024/02/07-18:39:45.368 994c Compacting 1@1 + 1@2 files
+2024/02/07-18:39:45.370 994c Generated table #9@1: 69 keys, 1212 bytes
+2024/02/07-18:39:45.370 994c Compacted 1@1 + 1@2 files => 1212 bytes
+2024/02/07-18:39:45.373 994c compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/02/07-18:39:45.373 994c Delete type=2 #5
+2024/02/07-18:39:45.373 994c Delete type=2 #8
+2024/02/07-18:39:45.373 994c Manual compaction at level-1 from '\x00\x00\x00\x00\x06' @ 227 : 1 .. (end); will stop at (end)

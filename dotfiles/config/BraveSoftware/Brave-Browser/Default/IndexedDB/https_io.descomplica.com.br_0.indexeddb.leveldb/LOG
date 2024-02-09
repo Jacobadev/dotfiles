@@ -1,0 +1,6 @@
+2024/02/07-19:06:30.998 994b Creating DB /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_io.descomplica.com.br_0.indexeddb.leveldb since it was missing.
+2024/02/07-19:06:31.005 994b Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_io.descomplica.com.br_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/07-19:16:53.710 994c Level-0 table #5: started
+2024/02/07-19:16:53.712 994c Level-0 table #5: 889 bytes OK
+2024/02/07-19:16:53.715 994c Delete type=0 #3
+2024/02/07-19:16:53.715 994c Manual compaction at level-0 from (begin) .. (end); will stop at (end)

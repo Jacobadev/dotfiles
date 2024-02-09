@@ -1,3 +1,6 @@
-2024/02/05-13:52:24.601 473 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/05-13:52:24.601 473 Recovering log #3
-2024/02/05-13:52:24.602 473 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000003.log 
+2024/02/07-19:05:00.443 994b Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/07-19:05:00.443 994b Recovering log #3
+2024/02/07-19:05:00.462 994b Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000003.log 
+2024/02/07-19:05:07.893 994b Level-0 table #5: started
+2024/02/07-19:05:07.924 994b Level-0 table #5: 2609781 bytes OK
+2024/02/07-19:05:07.928 994b Delete type=0 #3

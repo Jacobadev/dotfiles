@@ -1,20 +1,6 @@
-2024/02/06-17:58:59.785 4 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
-2024/02/06-17:58:59.947 4 Recovering log #364
-2024/02/06-17:58:59.983 4 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000364.log 
-2024/02/06-17:59:11.124 5 Level-0 table #368: started
-2024/02/06-17:59:11.128 5 Level-0 table #368: 26096 bytes OK
-2024/02/06-17:59:11.133 5 Delete type=0 #364
-2024/02/06-18:05:53.382 5 Level-0 table #370: started
-2024/02/06-18:05:53.386 5 Level-0 table #370: 28283 bytes OK
-2024/02/06-18:05:53.394 5 Delete type=0 #367
-2024/02/06-18:05:53.394 5 Compacting 4@0 + 2@1 files
-2024/02/06-18:05:53.459 5 Generated table #371@0: 371 keys, 3344701 bytes
-2024/02/06-18:05:53.488 5 Generated table #372@0: 1275 keys, 1361711 bytes
-2024/02/06-18:05:53.488 5 Compacted 4@0 + 2@1 files => 4706412 bytes
-2024/02/06-18:05:53.491 5 compacted to: files[ 0 2 1 0 0 0 0 ]
-2024/02/06-18:05:53.492 5 Delete type=2 #359
-2024/02/06-18:05:53.492 5 Delete type=2 #360
-2024/02/06-18:05:53.492 5 Delete type=2 #362
-2024/02/06-18:05:53.492 5 Delete type=2 #365
-2024/02/06-18:05:53.492 5 Delete type=2 #368
-2024/02/06-18:05:53.492 5 Delete type=2 #370
+2024/02/09-14:37:59.619 4 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+2024/02/09-14:37:59.635 4 Recovering log #491
+2024/02/09-14:37:59.641 4 Reusing old log /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000491.log 
+2024/02/09-15:01:56.213 6 Level-0 table #495: started
+2024/02/09-15:01:56.237 6 Level-0 table #495: 22952 bytes OK
+2024/02/09-15:01:56.241 6 Delete type=0 #491
