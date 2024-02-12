@@ -1,6 +1,0 @@
-2024/02/05-14:12:09.186 473 Creating DB /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_developer.mozilla.org_0.indexeddb.leveldb since it was missing.
-2024/02/05-14:12:09.190 473 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_developer.mozilla.org_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/05-14:12:41.035 474 Level-0 table #5: started
-2024/02/05-14:12:41.036 474 Level-0 table #5: 401 bytes OK
-2024/02/05-14:12:41.039 474 Delete type=0 #3
-2024/02/05-14:12:41.039 474 Manual compaction at level-0 from (begin) .. (end); will stop at (end)

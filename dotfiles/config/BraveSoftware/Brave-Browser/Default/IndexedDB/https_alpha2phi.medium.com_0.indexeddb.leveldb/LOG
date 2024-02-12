@@ -1,6 +1,0 @@
-2024/02/03-09:37:48.786 836 Creating DB /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_alpha2phi.medium.com_0.indexeddb.leveldb since it was missing.
-2024/02/03-09:37:48.809 836 Reusing MANIFEST /home/jacoba/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_alpha2phi.medium.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/02/03-10:05:00.997 837 Level-0 table #5: started
-2024/02/03-10:05:00.998 837 Level-0 table #5: 3117 bytes OK
-2024/02/03-10:05:01.001 837 Delete type=0 #3
-2024/02/03-10:05:01.001 837 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
