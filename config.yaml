@@ -20,9 +20,6 @@ dotfiles:
   f_gitconfig:
     src: home/jacoba/.gitconfig
     dst: /home/jacoba/.gitconfig
-  d_screenlayout:
-    src: home/jacoba/.screenlayout
-    dst: /home/jacoba/.screenlayout
   d_bspwm:
     src: config/bspwm
     dst: ~/.config/bspwm
@@ -46,7 +43,6 @@ profiles:
     dotfiles:
     - f_zshrc
     - f_gitconfig
-    - d_screenlayout
     - d_bspwm
     - d_scripts
     - d_nvim
