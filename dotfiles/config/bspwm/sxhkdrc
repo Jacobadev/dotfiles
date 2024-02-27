@@ -47,7 +47,7 @@ super + alt + o
 
 # Power off, Reboot, Log out, Lockscreen, kill an app
 ctrl + alt + End
-    sudo systemctl poweroff
+    poweroff
 
 ctrl + alt + Delete
     reboot
