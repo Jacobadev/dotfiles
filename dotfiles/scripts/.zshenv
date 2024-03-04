@@ -1,4 +1,4 @@
-. $HOME/scripts/secrets.sh
+. $HOME/secrets.sh
 # Secrets.example
 # export GITHUB_TOKEN=
 

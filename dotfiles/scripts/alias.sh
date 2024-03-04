@@ -30,7 +30,7 @@ alias ll='exa -lbGF --git' # long list
 
 # Dotdrop Git
 
-export JACOBA_DOT=$HOME/jacoba_dot
+export JACOBA_DOT="$HOME/dotfiles"
 alias dotdrop="$JACOBA_DOT/dotdrop.sh"
 alias dotgit="git -C $JACOBA_DOT"
 alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
