@@ -14,9 +14,7 @@ myvars.yaml
 - pyenv
 - ripgrep (rg)
 - zoxide
-- nvim
 - lvim
 - yay
-- snap
 - fzf
 
