@@ -18,7 +18,7 @@ tmux_conf_new_session_prompt=false
 #   - true
 #   - false (default)
 #   - disabled (do not modify new-window bindings)
-tmux_conf_new_window_retain_current_path=false
+tmux_conf_new_window_retain_current_path=true
 
 # new window tries to reconnect ssh sessions, possible values are:
 #   - true
@@ -49,7 +49,7 @@ tmux_conf_new_pane_reconnect_ssh=false
 # automatic detection relies on the COLORTERM environment variable being defined
 # to 'truecolor' or '24bit' or '$ tput colors' answering '16777216'
 # see https://github.com/termstandard/colors
-tmux_conf_24b_colour=auto
+tmux_conf_24b_colour=true
 
 
 # -- theming -------------------------------------------------------------------
@@ -350,13 +350,14 @@ tmux_conf_copy_to_os_clipboard=false
 # JACOBA
 # this is the place to override or undo settings
 
+
  set -gu prefix2
  unbind C-a
  unbind C-b
  set -g prefix C-a
  bind C-a send-prefix
 
-
+set-window-option -g xterm-keys
 
 bind -n M-h select-pane -L
 bind -n M-l select-pane -R
@@ -368,8 +369,6 @@ bind -r Tab last-window        # move to last active window
 bind - split-window -v
 # split current window vertically
 bind v split-window -h
-bind-key -n Home send Escape "OH"
-bind-key -n End send Escape "OF"
 bind -r b new-window
 
 bind-key -n M-1 select-window -t 1
@@ -377,8 +376,11 @@ bind-key -n M-2 select-window -t 2
 bind-key -n M-3 select-window -t 3
 bind-key -n M-4 select-window -t 4
 bind-key -n M-5 select-window -t 5
+
+bind-key -n Home send Escape "OH"
+bind-key -n End send Escape "OF"
 # increase history size
-#set -g history-limit 10000
+set -g history-limit 1000000
 
 # start with mouse mode enabled
 #set -g mouse on
@@ -388,7 +390,6 @@ bind-key -n M-5 select-window -t 5
 #set -g status-keys vi
 #set -g mode-keys vi
 
-# replace C-b by C-a instead of using both prefixes
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
 

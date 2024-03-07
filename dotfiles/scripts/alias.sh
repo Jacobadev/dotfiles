@@ -42,12 +42,15 @@ alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=45"
 alias gp='git push origin HEAD'
 alias gsu='git push --set-upstream'
-alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/"'
+
+alias gdw='git diff --color --word-diff'
+alias gd='git diff --color'
 alias gc='git commit'
-alias gca='git commit -a'
+alias gca='git commit --amend --no-edit'
 alias gco='git checkout'
 alias gcb='git copy-branch-name'
-alias gb='git branch'
+alias gb="git branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate"
+alias gbd="git branch -D"
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
@@ -68,7 +71,6 @@ alias vim="nvim"
 ### CLIP
 alias clip="xclip -sel clip <"
 ### POETRY
-alias psh="poetry shell"
 ### FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ### NVM
@@ -104,5 +106,8 @@ alias bsp="vim ~/.config/bspwm/bspwmrc"
 alias kbd="vim ~/.config/bspwm/sxhkdrc"
 
 ## POETRY
-
+alias psh="poetry shell"
 alias pa="poetry add"
+
+## PACMAN
+alias ps="sudo pacman --noconfirm -S"
