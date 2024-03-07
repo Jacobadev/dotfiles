@@ -144,3 +144,5 @@ SCRIPTS="$HOME/scripts"
 export TERM="xterm-256color"
 export EDITOR="nvim"
 export PATH=$PATH:"$HOME/Downloads/pycharm-community-2023.3.4/bin/"
+
+eval $(thefuck --alias)

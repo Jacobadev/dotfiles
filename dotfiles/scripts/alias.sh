@@ -23,9 +23,9 @@ alias .5='cd ../../../../..'
 ## LS
 #
 alias lS='exa -1 ' # one column, just names
-alias lt='exa --tree --level=2'
+alias lt='exa --tree --level=4'
 alias l='exa' # ls
-alias ls='exa -lah'
+alias ls='exa -la'
 alias ll='exa -lbGF --git' # long list
 
 # Dotdrop Git
@@ -39,10 +39,10 @@ alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic
 #### GIT
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun
 alias gl='git pull --prune'
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=50"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=45"
 alias gp='git push origin HEAD'
 alias gsu='git push --set-upstream'
-alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
+alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/"'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
