@@ -1,7 +1,8 @@
 {
   "extras": [
     "lazyvim.plugins.extras.editor.symbols-outline",
-    "lazyvim.plugins.extras.lang.tailwind"
+    "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.util.project"
   ],
   "news": {
     "NEWS.md": "2123"

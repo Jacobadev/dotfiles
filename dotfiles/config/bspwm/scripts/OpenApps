@@ -33,6 +33,9 @@ case "$1" in
 --ranger)
 	alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=14 window.dimensions.columns=90 -e ranger
 	;;
+--monitor)
+	source ~/scripts/configurar_monitores.sh
+	;;
 --nvim)
 	alacritty -e nvim
 	;;
@@ -45,9 +48,6 @@ case "$1" in
 	;;
 --editor)
 	nvim
-	;;
---powermenu)
-	eww -c "$WIDGET_DIR" open --toggle powermenu
 	;;
 *)
 	echo "Invalid Option"

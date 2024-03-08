@@ -203,6 +203,5 @@ shift + F1
 shift + F2
   bspc monitor -f HDMI-0
 
-
-
-
+super + p 
+  OpenApps --monitor

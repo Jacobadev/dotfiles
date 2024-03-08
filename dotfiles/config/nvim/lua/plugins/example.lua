@@ -17,7 +17,7 @@ return {
             {
                 "<leader>r",
                 function()
-                    require("refactoring").setup({})
+                    require("refactoring").setup({show_success_message=true})
                 end,
                 mode = "v",
                 noremap = true,
