@@ -103,7 +103,6 @@ return {
           "html",
           "javascript",
           "json",
-          "lua",
           "markdown",
           "markdown_inline",
           "query",
@@ -128,24 +127,7 @@ return {
 
 
     -- add any tools you want to have installed below
-    {
-      "williamboman/mason.nvim",
-      opts = {
-        automatic_installation = false,
-        ensure_installed = {
-          "stylua",
-          "shellcheck",
-          "shfmt",
-      "stylua",
-				"selene",
-				"luacheck",
-				"tailwindcss-language-server",
-				"typescript-language-server",
-				"css-lsp",
-        },
-      },
-    },
-
+   
     {
       "catppuccin/nvim",
       lazy = true,
