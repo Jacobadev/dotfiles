@@ -35,23 +35,6 @@ end, { desc = "Extract Block To File" })
 
 -- Extract block supports only normal mode
 -- Extract block supports only normal mode
-vim.keymap.set("n", "x", '"_x')
-vim.keymap.set("n", "<Leader>p", '"0p')
-vim.keymap.set("n", "<Leader>P", '"0P')
-vim.keymap.set("v", "<Leader>p", '"0p')
-vim.keymap.set("n", "<Leader>c", '"_c')
-vim.keymap.set("n", "<Leader>C", '"_C')
-vim.keymap.set("v", "<Leader>c", '"_c')
-vim.keymap.set("v", "<Leader>C", '"_C')
-vim.keymap.set("n", "<Leader>d", '"_d')
-vim.keymap.set("n", "<Leader>D", '"_D')
--- add LazyVim and import its plugins
--- add LazyVim and import its plugins
--- add LazyVim and import its plugins
--- add LazyVim and import its plugins
--- add LazyVim and import its plugins
-vim.keymap.set("v", "<Leader>d", '"_d')
-vim.keymap.set("v", "<Leader>D", '"_D')
 
 vim.keymap.set("n", "<C-j>", function()
     vim.diagnostic.goto_next()
