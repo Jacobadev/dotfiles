@@ -182,6 +182,7 @@ return {
     --
     {
       "Exafunction/codeium.nvim",
+      event='BufEnter',
       cmd = "Codeium",
       build = ":Codeium Auth",
       opts = {
@@ -210,8 +211,9 @@ return {
   opts = function(_, opts)
     table.insert(opts.sources, 1, {
       name = "codeium",
-      group_index = 1,
-      priority = 1000,
+      group_index = 4,
+      priority = 100,
+          
     })
 
     local has_words_before = function()

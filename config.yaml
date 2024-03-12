@@ -1,5 +1,4 @@
 config:
-  backup: true
   banner: true
   create: true
   dotpath: dotfiles
