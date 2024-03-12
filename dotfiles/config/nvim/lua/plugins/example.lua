@@ -178,16 +178,32 @@ return {
         return {}
       end,
     },
-    -- then: setup supertab in cmp
-{
-  "nvim-cmp",
-  dependencies = {
+   -- then: setup supertab in cmp
+    --
     {
       "Exafunction/codeium.nvim",
       cmd = "Codeium",
       build = ":Codeium Auth",
-      opts = {},
+      opts = {
+  
+                    vim.keymap.set("i", "<C-g>", function()
+                        return vim.fn["codeium#Accept"]()
+                    end, { expr = true, silent = true }),
+                    vim.keymap.set("i", "<c-;>", function()
+                        return vim.fn["codeium#CycleCompletions"](1)
+                    end, { expr = true, silent = true }),
+                    vim.keymap.set("i", "<c-,>", function()
+                        return vim.fn["codeium#CycleCompletions"](-1)
+                    end, { expr = true, silent = true }),
+                    vim.keymap.set("i", "<c-x>", function()
+                        return vim.fn["codeium#Clear"]()
+                    end, { expr = true, silent = true }),
+          },
     },
+{
+  "nvim-cmp",
+  dependencies = {
+    "Exafunction/codeium.nvim",
     "hrsh7th/cmp-emoji", -- Add dependencies from the second configuration
   },
   ---@param opts cmp.ConfigSchema
@@ -195,7 +211,7 @@ return {
     table.insert(opts.sources, 1, {
       name = "codeium",
       group_index = 1,
-      priority = 100,
+      priority = 1000,
     })
 
     local has_words_before = function()
