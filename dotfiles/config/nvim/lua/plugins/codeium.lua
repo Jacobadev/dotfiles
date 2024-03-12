@@ -7,7 +7,22 @@ return {
                 "Exafunction/codeium.nvim",
                 cmd = "Codeium",
                 build = ":Codeium Auth",
-                opts = {},
+                opts = {
+                    -- Remove the `use` here if you're using folke/lazy.nvim.
+                    -- Change '<C-g>' here to any keycode you like.
+                    vim.keymap.set("i", "<C-g>", function()
+                        return vim.fn["codeium#Accept"]()
+                    end, { expr = true, silent = true }),
+                    vim.keymap.set("i", "<c-;>", function()
+                        return vim.fn["codeium#CycleCompletions"](1)
+                    end, { expr = true, silent = true }),
+                    vim.keymap.set("i", "<c-,>", function()
+                        return vim.fn["codeium#CycleCompletions"](-1)
+                    end, { expr = true, silent = true }),
+                    vim.keymap.set("i", "<c-x>", function()
+                        return vim.fn["codeium#Clear"]()
+                    end, { expr = true, silent = true }),
+                },
             },
         },
         ---@param opts cmp.ConfigSchema
@@ -15,7 +30,8 @@ return {
             table.insert(opts.sources, 1, {
                 name = "codeium",
                 group_index = 1,
-                priority = 100,
+                priority = 1000,
+                keyword_length = 2,
             })
         end,
     },
