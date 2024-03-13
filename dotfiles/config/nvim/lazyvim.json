@@ -1,5 +1,8 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.coding.codeium",
+    "lazyvim.plugins.extras.coding.native_snippets",
+    "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.outline",
     "lazyvim.plugins.extras.util.project"
   ],
