@@ -30,7 +30,6 @@ return {
     opts = { style = "moon",
 
     },
-
     -- change trouble config
     {
       "folke/trouble.nvim",
@@ -103,20 +102,12 @@ return {
           "typescript",
           "vim",
           "yaml",
+          "go",
 
         },
         auto_install = true,
       },
     },
-
-    {
-      "nvim-lualine/lualine.nvim",
-      event = "VeryLazy",
-      opts = function(_, opts)
-        table.insert(opts.sections.lualine_x, "😄")
-      end,
-    },
-
 
     -- add any tools you want to have installed below
    
