@@ -1,31 +1,17 @@
 return {
     {
-        "nvim-lualine/lualine.nvim",
-        optional = true,
-        event = "VeryLazy",
-        opts = function(_, opts)
-            table.insert(opts.sections.lualine_x, 2, require("lazyvim.util").lualine.cmp_source("codeium"))
+        "Exafunction/codeium.vim",
+        config = function()
+            -- Change '<C-g>' here to any keycode you like.
+            vim.keymap.set("i", "<C-x>", function()
+                return vim.fn["codeium#CycleCompletions"](1)
+            end, { expr = true, silent = true })
+            vim.keymap.set("i", "<C-c>", function()
+                return vim.fn["codeium#CycleCompletions"](-1)
+            end, { expr = true, silent = true })
+            vim.keymap.set("i", "<C-v>", function()
+                return vim.fn["codeium#Clear"]()
+            end, { expr = true, silent = true })
         end,
-    },
-    {
-        "nvim-cmp",
-        dependencies = {
-            {
-                "Exafunction/codeium.nvim",
-                cmd = "Codeium",
-                build = ":Codeium Auth",
-                opts = {},
-            },
-        },
-        opts = {
-
-            completion = {
-                completeopt = "menu,menuone,noselect",
-            },
-            mapping = {},
-            sources = {
-                { name = "codeium", priority = 100 },
-            },
-        },
     },
 }
