@@ -20,14 +20,19 @@ return {
         },
         -- change some options
         opts = {
-            defaults = {
-                layout_strategy = "horizontal",
-                layout_config = { prompt_position = "top" },
-                sorting_strategy = "ascending",
-                winblend = 0,
+            mappings = {
+                i = {
+                    ["<C-j>"] = require("telescope.actions").cycle_history_next,
+                    ["<C-k>"] = require("telescope.actions").cycle_history_prev,
+                },
             },
+            layout_strategy = "horizontal",
+            layout_config = { prompt_position = "top" },
+            sorting_strategy = "ascending",
+            winblend = 0,
         },
     },
+
     -- add telescope-fzf-native
     {
         "telescope.nvim",
