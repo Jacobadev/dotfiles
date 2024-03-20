@@ -152,9 +152,10 @@ eval $(thefuck --alias)
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
 alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
+alias nvim-react="NVIM_APPNAME=NvimReact nvim"
 
 function nvims() {
-  items=( "kickstart" "LazyVim"  "AstroNvim")
+  items=( "kickstart" "LazyVim"  "AstroNvim" "ReactNvim")
   config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
   if [[ -z $config ]]; then
     echo "Nothing selected"
@@ -168,3 +169,5 @@ function nvims() {
 bindkey -s ^a "nvims\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export _ZO_MAXAGE=1000000
