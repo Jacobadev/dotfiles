@@ -49,6 +49,9 @@ case "$1" in
 --editor)
 	nvim
 	;;
+--saldo)
+	source ~/scripts/inter.sh
+	;;
 *)
 	echo "Invalid Option"
 	;;
