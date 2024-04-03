@@ -39,7 +39,6 @@ function dotsync {
     # Faz o pull de quaisquer mudanças remotas
     dotgit pull 
     
-    # Empurra as alterações para o repositório remoto
     dotgit push 
     pyenv global $LAST_VERSION
 } 
