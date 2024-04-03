@@ -11,7 +11,9 @@
 }
 
 
-# Defina uma função para sincronizar e fazer o commit das alterações
+function back_version(version){
+pyenv global $version
+}
 function dotsync {
     # Exporta o caminho para os dotfiles
     export JACOBA_DOT="$HOME/dotfiles"
@@ -43,9 +45,7 @@ function dotsync {
     
     # Empurra as alterações para o repositório remoto
     dotgit push 
-    
-    # Restaura a versão anterior do Python
-    pyenv global "$last_version"
+    back_version(last_version)   
 }
 
 
