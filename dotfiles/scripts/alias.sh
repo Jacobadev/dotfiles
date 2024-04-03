@@ -27,10 +27,6 @@ alias l='exa' # ls
 alias ls='exa -la'
 alias ll='exa -lbGF --git' # long list
 
-# Dotdrop Git
-
-#
-
 #### GIT
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun
 alias gl='git pull --prune'
