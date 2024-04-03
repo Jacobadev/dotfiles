@@ -59,7 +59,14 @@ SAVEHIST=10000000
 #  ┌─┐┌─┐┬ ┬  ┌─┐┌─┐┌─┐┬    ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
 #  ┌─┘└─┐├─┤  │  │ ││ ││    │ │├─┘ │ ││ ││││└─┐
 #  └─┘└─┘┴ ┴  └─┘└─┘└─┘┴─┘  └─┘┴   ┴ ┴└─┘┘└┘└─┘
-setopt AUTOCD              # change directory just by typing its name
+# pnpm
+for f in /home/jacoba/scripts/sources/*; do source $f; done
+# pnpm end
+#
+## Inicia o agente SSH, se não estiver em execução
+#  CAT
+
+### SOURCES
 setopt PROMPT_SUBST        # enable command substitution in prompt
 setopt MENU_COMPLETE       # Automatically highlight first element of completion menu
 setopt LIST_PACKED		   # The completion menu takes less space.
@@ -129,18 +136,8 @@ bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
 
-# pnpm
 
-# pnpm end
-#
-## Inicia o agente SSH, se não estiver em execução
-#  CAT
 
-### SOURCES
-SCRIPTS="$HOME/scripts"
- . $SCRIPTS/agents.sh
- . $SCRIPTS/alias.sh
- . $SCRIPTS/.zshenv
 
 export TERM="xterm-256color"
 export EDITOR="nvim"

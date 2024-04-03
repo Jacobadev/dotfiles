@@ -43,7 +43,6 @@ alias gp='git push origin HEAD'
 alias gsu='git push --set-upstream'
 
 alias gd='git diff '
-alias gc='git commit'
 alias gca='git commit --amend --no-edit'
 alias gco='git checkout'
 alias gcb='git copy-branch-name'
@@ -52,8 +51,6 @@ alias gbd="git branch -D"
 alias ge='git-edit-new'
 
 #  HISTORY
-
-alias th='tail -n40 < <(history 1 | cat)'
 
 ## ALIAS
 
