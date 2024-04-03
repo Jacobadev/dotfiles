@@ -12,8 +12,8 @@
 
 
 # Defina uma função para sincronizar e fazer o commit das alterações
-function sync_dotfiles {
-    # Exporta o caminho para os dotfiles
+function dotsync {
+    
     export JACOBA_DOT="$HOME/dotfiles"
     
     # Alias para o script dotdrop
@@ -23,7 +23,8 @@ function sync_dotfiles {
     alias dotgit="git -C $JACOBA_DOT"
     
     # Sincroniza os dotfiles
-    
+    last_version = $(pyenv global)
+
         # Define a versão do Python para o sistema
         pyenv global system 
         
@@ -43,8 +44,6 @@ function sync_dotfiles {
         dotgit push 
     
     
-    # Chama a função dotsync para sincronizar e fazer o commit das alterações
-    dotsync
 }
 
 
