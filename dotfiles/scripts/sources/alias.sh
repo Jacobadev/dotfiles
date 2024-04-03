@@ -32,7 +32,7 @@ alias ll='exa -lbGF --git' # long list
 export JACOBA_DOT="$HOME/dotfiles"
 alias dotdrop="$JACOBA_DOT/dotdrop.sh"
 alias dotgit="git -C $JACOBA_DOT"
-alias dotsync="dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
+alias dotsync="pyenv global system && dotdrop update -f && dotgit add -A && dotgit commit -m 'automatic scheduled task' && dotgit pull && dotgit push"
 #
 
 #### GIT
