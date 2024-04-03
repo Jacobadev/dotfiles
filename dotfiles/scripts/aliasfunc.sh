@@ -17,10 +17,10 @@ function dotsync {
     export JACOBA_DOT="$HOME/dotfiles"
     
     # Alias para o script dotdrop
-    alias dotdrop="$JACOBA_DOT/dotdrop.sh"
+    dotdrop="$JACOBA_DOT/dotdrop.sh"
     
     # Alias para o git dentro do diretório dotfiles
-    alias dotgit="git -C $JACOBA_DOT"
+    dotgit="git -C $JACOBA_DOT"
     
     # Armazena a versão atual do Python
 
