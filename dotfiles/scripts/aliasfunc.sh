@@ -25,7 +25,7 @@ function dotsync {
     # Armazena a versão atual do Python
     echo "Última versão do Python: $last_version"
     
-    echo last_version
+    local last_version = $(pyenv global)
 
     echo "Última versão do Python: $last_version"
     # Define a versão do Python para o sistema
