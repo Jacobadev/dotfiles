@@ -42,8 +42,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gp='git push origin HEAD'
 alias gsu='git push --set-upstream'
 
-alias gd='git diff '
-alias gc='git commit'
+alias gd='git diff'
 alias gca='git commit --amend --no-edit'
 alias gco='git checkout'
 alias gcb='git copy-branch-name'
