@@ -23,11 +23,9 @@ function dotsync {
     alias dotgit="git -C $JACOBA_DOT"
     
     # Armazena a versão atual do Python
+    local last_version=$(pyenv global)
     echo "Última versão do Python: $last_version"
-    
-    local last_version = $(pyenv global)
 
-    echo "Última versão do Python: $last_version"
     # Define a versão do Python para o sistema
     pyenv global system 
     
@@ -45,7 +43,8 @@ function dotsync {
     
     # Empurra as alterações para o repositório remoto
     dotgit push 
-    echo "Última versão do Python: $last_version"
+    
+    # Restaura a versão anterior do Python
     pyenv global "$last_version"
 }
 
