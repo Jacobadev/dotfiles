@@ -11,11 +11,9 @@
 }
 
 
-function back_version(version){
-pyenv global $version
-}
+
 function dotsync {
-    # Exporta o caminho para os dotfiles
+    export last_version=$(pyenv global)
     export JACOBA_DOT="$HOME/dotfiles"
     
     # Alias para o script dotdrop
@@ -25,8 +23,6 @@ function dotsync {
     alias dotgit="git -C $JACOBA_DOT"
     
     # Armazena a versão atual do Python
-    local last_version=$(pyenv global)
-    echo "Última versão do Python: $last_version"
 
     # Define a versão do Python para o sistema
     pyenv global system 
@@ -45,8 +41,8 @@ function dotsync {
     
     # Empurra as alterações para o repositório remoto
     dotgit push 
-    back_version(last_version)   
-}
+    pyenv global $last_version
+} 
 
 
  dcleanup() {
