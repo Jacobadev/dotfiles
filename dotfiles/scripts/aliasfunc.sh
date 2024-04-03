@@ -16,30 +16,29 @@ function dotsync {
     export LAST_VERSION=$(pyenv global)
     export JACOBA_DOT="$HOME/dotfiles"
     
-    # Alias para o script dotdrop
-    alias dotdrop="$JACOBA_DOT/dotdrop.sh"
-    
-    # Alias para o git dentro do diretório dotfiles
-    alias dotgit="git -C $JACOBA_DOT"
+    # Define o caminho completo para o script dotdrop
+    dotdrop_script="$JACOBA_DOT/dotdrop.sh"
     
     # Armazena a versão atual do Python
-
+    local current_version=$(pyenv version-name)
+    
     # Define a versão do Python para o sistema
     pyenv global system 
     
-    dotdrop update -f 
+    # Atualiza os dotfiles usando o dotdrop
+    $dotdrop_script update -f 
     
     # Adiciona todas as mudanças ao git
-    dotgit add -A 
+    /usr/bin/git -C "$JACOBA_DOT" add -A 
     
     # Faz um commit automático
-    dotgit commit -m 'automatic scheduled task' 
-    
-    # Faz o pull de quaisquer mudanças remotas
+    /usr/bin/git -C "$JACOBA_DOT" commit -m 'automatic scheduled task' 
     
     # Empurra as alterações para o repositório remoto
-    dotgit push --force
-    pyenv global $last_version
+    /usr/bin/git -C "$JACOBA_DOT" push --force
+    
+    # Restaura a versão anterior do Python
+    pyenv global "$LAST_VERSION"
 } 
 
 
