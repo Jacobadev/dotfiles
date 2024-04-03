@@ -14,12 +14,11 @@ alias dcd='docker compose down'
 ### NAVIGATIONS
 # CD
 #
-alias ..='cd ..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../'
+alias .1='cd ..'
+alias .2='cd ../../../'
+alias .3='cd ../../../../'
 alias .4='cd ../../../../'
-alias .5='cd ../../../../..'
+alias .4='cd ../../../../../'
 ## LS
 #
 alias lS='exa -1 ' # one column, just names
@@ -50,21 +49,18 @@ alias gco='git checkout'
 alias gcb='git copy-branch-name'
 alias gb="git branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate"
 alias gbd="git branch -D"
-alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
 
 #  HISTORY
 
-alias h='history 1 | rg'
 alias th='tail -n40 < <(history 1 | cat)'
 
 ## ALIAS
 
 alias al="alias | cat"
-alias alr="alias | rg"
 # VIM LVIM
 
-alias vim="nvim"
+alias v="nvim"
 ### RUN AGENTS
 
 ### CLIP

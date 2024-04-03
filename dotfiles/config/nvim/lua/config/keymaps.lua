@@ -34,13 +34,6 @@ vim.keymap.set("n", "<leader>rbf", function()
     require("refactoring").refactor("Extract Block To File")
 end, { desc = "Extract Block To File" })
 
-vim.keymap.set("n", "<C-j>", function()
-    vim.diagnostic.goto_next()
-end, opts)
-vim.keymap.set("n", "<C-k>", function()
-    vim.diagnostic.goto_prev()
-end, opts)
-
 local harpoon = require("harpoon")
 -- REQUIRED
 harpoon:setup()
