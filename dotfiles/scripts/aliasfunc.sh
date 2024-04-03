@@ -42,9 +42,12 @@ function dotsync {
         
         # Empurra as alterações para o repositório remoto
         dotgit push 
-    
+
+    pyenv global $last_version
     
 }
+    # Chama a função dotsync para sincronizar e fazer o commit das alterações
+    dotsync
 
 
  dcleanup() {
