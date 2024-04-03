@@ -13,7 +13,7 @@
 
 
 function dotsync {
-    export last_version=$(pyenv global)
+    export LAST_VERSION=$(pyenv global)
     export JACOBA_DOT="$HOME/dotfiles"
     
     # Alias para o script dotdrop
@@ -41,7 +41,7 @@ function dotsync {
     
     # Empurra as alterações para o repositório remoto
     dotgit push 
-    pyenv global $last_version
+    pyenv global $LAST_VERSION
 } 
 
 
