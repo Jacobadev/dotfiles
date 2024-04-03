@@ -2,8 +2,6 @@
 
 ### SSH
 
-eval $(thefuck --alias)
-
 if [ -z "$SSH_AUTH_SOCK" ]; then
 	eval "$(ssh-agent -s)" >/dev/null 2>&1
 	if ! ssh-add -L | grep -q "$HOME/.ssh/id_jacoba"; then
@@ -11,7 +9,7 @@ if [ -z "$SSH_AUTH_SOCK" ]; then
 	fi
 fi
 
-export PYENV_ROOT="$HOME/.pyenv"/
+export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 

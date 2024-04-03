@@ -59,14 +59,7 @@ SAVEHIST=10000000
 #  ┌─┐┌─┐┬ ┬  ┌─┐┌─┐┌─┐┬    ┌─┐┌─┐┌┬┐┬┌─┐┌┐┌┌─┐
 #  ┌─┘└─┐├─┤  │  │ ││ ││    │ │├─┘ │ ││ ││││└─┐
 #  └─┘└─┘┴ ┴  └─┘└─┘└─┘┴─┘  └─┘┴   ┴ ┴└─┘┘└┘└─┘
-# pnpm
-for f in /home/jacoba/scripts/sources/*; do source $f; done
-# pnpm end
-#
-## Inicia o agente SSH, se não estiver em execução
-#  CAT
-
-### SOURCES
+setopt AUTOCD              # change directory just by typing its name
 setopt PROMPT_SUBST        # enable command substitution in prompt
 setopt MENU_COMPLETE       # Automatically highlight first element of completion menu
 setopt LIST_PACKED		   # The completion menu takes less space.
@@ -136,13 +129,24 @@ bindkey  "^[[F"   end-of-line
 bindkey  "^[[3~"  delete-char
 
 
+# pnpm
 
+# pnpm end
+#
+## Inicia o agente SSH, se não estiver em execução
+#  CAT
 
+### SOURCES
+SCRIPTS="$HOME/scripts"
+ . $SCRIPTS/agents.sh
+ . $SCRIPTS/alias.sh
+ . $SCRIPTS/.zshenv
 
 export TERM="xterm-256color"
 export EDITOR="nvim"
 export PATH=$PATH:"$HOME/Downloads/pycharm-community-2023.3.4/bin/"
 
+eval $(thefuck --alias)
 
 ## NVIM SWITCHER
 alias nvim-lazy="NVIM_APPNAME=LazyVim nvim"
@@ -150,6 +154,17 @@ alias nvim-kick="NVIM_APPNAME=kickstart nvim"
 alias nvim-astro="NVIM_APPNAME=AstroNvim nvim"
 alias nvim-react="NVIM_APPNAME=NvimReact nvim"
 
+function nvims() {
+  items=( "kickstart" "LazyVim"  "AstroNvim" "ReactNvim")
+  config=$(printf "%s\n" "${items[@]}" | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+  if [[ -z $config ]]; then
+    echo "Nothing selected"
+    return 0
+  elif [[ $config == "default" ]]; then
+    config=""
+  fi
+  NVIM_APPNAME=$config nvim $@
+}
 
 bindkey -s ^a "nvims\n"
 
