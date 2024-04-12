@@ -10,6 +10,7 @@ alias dc='docker compose'
 alias dcu='docker compose up'
 alias dcub='docker compose up --build'
 alias dcd='docker compose down'
+alias dv='docker images -a && docker ps -a'
 
 ### NAVIGATIONS
 # CD
@@ -49,7 +50,7 @@ alias th='tail -n40 < <(history 1 | cat)'
 ## ALIAS
 
 alias al="alias | cat"
-# VIM LVIM
+# VIM
 
 alias vim="nvim"
 alias v="nvim"

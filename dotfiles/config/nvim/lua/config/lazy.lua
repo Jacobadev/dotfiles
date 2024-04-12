@@ -13,7 +13,6 @@ require("lazy").setup({
         --
         { import = "lazyvim.plugins.extras.lang.go" },
         { import = "lazyvim.plugins.extras.lang.json" },
-        { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
         { import = "lazyvim.plugins.extras.lang.tailwind" },
         -- import/override with your plugins
         { import = "plugins" },
@@ -33,9 +32,9 @@ require("lazy").setup({
         rtp = {
             -- disable some rtp plugins
             disabled_plugins = {
-                -- "gzip",
+                "gzip",
                 -- "matchit",
-                -- "matchparen",
+                "matchparen",
                 -- "netrwPlugin",
                 "tarPlugin",
                 "tohtml",

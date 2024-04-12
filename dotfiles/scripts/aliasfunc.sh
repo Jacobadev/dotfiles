@@ -3,8 +3,14 @@
  gac() {
 	git add -A && git commit -m "$*"
 }
- h() {
-	history | rg "$1" | cat
+h() {
+    if [ $# -eq 0 ]; then
+        history 1 | cat
+    else
+        # Construir o padrão de busca combinando todas as palavras-chave
+        local pattern="$@"
+        history 1 | rg "$pattern" | cat
+    fi
 }
  alr() {
 	alias | rg "$1" | cat
@@ -46,3 +52,17 @@ function dotsync {
 	docker rm -f $(docker ps -aq 2>/dev/null) 2>/dev/null
 	docker rmi $(docker images -aq 2>/dev/null) 2>/dev/null
 }
+
+
+test() {
+  set +e
+  for m in "${MODULES[@]}"; do
+    go test -count 1 ./... | { grep -v 'no test files'; true; }
+    local r=$?
+    if [[ $r == 1 ]]; then
+      RETVAL=1
+    fi
+  done
+  set -e
+}
+

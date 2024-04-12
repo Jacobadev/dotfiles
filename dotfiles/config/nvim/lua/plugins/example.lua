@@ -7,11 +7,6 @@
 -- * override the configuration of LazyVim plugins
 return {
     {
-        "pmizio/typescript-tools.nvim",
-        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-        opts = {},
-    },
-    {
         "telescope.nvim",
         dependencies = {
             "nvim-telescope/telescope-fzf-native.nvim",
@@ -47,8 +42,6 @@ return {
                 "html",
                 "javascript",
                 "json",
-                "markdown",
-                "markdown_inline",
                 "query",
                 "regex",
                 "tsx",
@@ -67,7 +60,6 @@ return {
                 "stylua",
                 "shellcheck",
                 "shfmt",
-                "flake8",
             },
         },
     },
