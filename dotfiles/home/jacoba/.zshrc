@@ -117,7 +117,6 @@ fi
 #  ┌─┐┬ ┬┌┬┐┌─┐  ┌─┐┌┬┐┌─┐┬─┐┌┬┐
 #  ├─┤│ │ │ │ │  └─┐ │ ├─┤├┬┘ │ 
 #  ┴ ┴└─┘ ┴ └─┘  └─┘ ┴ ┴ ┴┴└─ ┴ 
-$HOME/.local/bin/colorscript -r
 setxkbmap -model abnt2 -layout br -variant abnt2
 
 # Automaticamnete gerar pacman -Qq > $HOME/scripts/pacotes.txt
@@ -150,3 +149,6 @@ export PATH=$PATH:"$HOME/Downloads/pycharm-community-2023.3.4/bin/"
 eval $(thefuck --alias)
 
 ## NVIM SWITCHER
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+alias winel="/opt/wine-lol/bin/wine"
+alias lol='/opt/wine-lol/bin/wine /home/jacoba/.wine/drive_c/Riot Games/Riot Client/RiotClientElectron/Riot\ Client.exe '
