@@ -35,7 +35,6 @@ case "$1" in
 	;;
 --monitor)
 	source ~/scripts/two_monitors.sh
-
 	;;
 --nvim)
 	alacritty -e nvim
