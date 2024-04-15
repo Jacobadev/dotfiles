@@ -19,7 +19,11 @@ case "$1" in
 	RiceSelector
 	;;
 --terminal)
-	alacritty
+	if bspc query -N -n .focused >/dev/null; then
+		alacritty
+	else
+		alacritty --class fullscreen
+	fi
 	;;
 --floating)
 	alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90

@@ -10,9 +10,9 @@
 #|||----- Applications -----|||#
 
 # Open Terminal (alacritty)
+# Verifica se há algum nó ativo no desktop atual e abre o próximo nó em tela cheia se necessário
 super + Return
-	OpenApps --terminal
-
+  OpenApps --terminal
 # Application menu
 super + @space
 	OpenApps --menu
@@ -102,7 +102,7 @@ super + alt + r
 
 # close and kill
 super + q
-	bspc node -{c,k}
+	bspc node -c
 	
 # Reload Keybindings
 super + Escape

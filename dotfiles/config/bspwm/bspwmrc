@@ -55,7 +55,7 @@ bspc config pointer_action3 resize_corner
 #bspc wm --adopt-orphans
 bspc rule -a discord desktop='^4'
 bspc rule -a nvim desktop='^2'
-bspc rule -a brave-browser desktop='^4' state=fullscreen
+bspc rule -a brave-browser desktop='^4' fullscreen
 
 # bspc rule -a Alacritty state=fullscreen
 
