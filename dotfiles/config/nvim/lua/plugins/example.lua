@@ -25,7 +25,6 @@ return {
                 desc = "Find Plugin File",
             },
         },
-        -- change some options
         opts = {
             layout_strategy = "horizontal",
             layout_config = { prompt_position = "top" },

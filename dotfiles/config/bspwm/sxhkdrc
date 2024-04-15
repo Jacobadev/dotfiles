@@ -18,10 +18,11 @@ super + @space
 	OpenApps --menu
 
 #####
+shift + alt + d
+  discord
 
-# Apps (browser, editor, filemanager)
-shift + alt + {b,n, d}
-	OpenApps {--browser,--nvim, --discord}
+shift + alt + {b,n}
+	OpenApps {--browser,--nvim}
 
 # Open nvim
 super + v

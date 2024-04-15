@@ -34,13 +34,11 @@ case "$1" in
 	alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=14 window.dimensions.columns=90 -e ranger
 	;;
 --monitor)
-	source ~/scripts/configurar_monitores.sh
+	source ~/scripts/two_monitors.sh
+
 	;;
 --nvim)
 	alacritty -e nvim
-	;;
---discord)
-	discord
 	;;
 # Apps
 --browser)
@@ -48,9 +46,6 @@ case "$1" in
 	;;
 --editor)
 	nvim
-	;;
---saldo)
-	source ~/scripts/inter.sh
 	;;
 *)
 	echo "Invalid Option"
