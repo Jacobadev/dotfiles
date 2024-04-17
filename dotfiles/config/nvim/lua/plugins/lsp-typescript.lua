@@ -1,55 +1,48 @@
 return {
-    {
-        "pmizio/typescript-tools.nvim",
-        dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-        config = function()
-            require("typescript-tools").setup({
-                settings = {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    event = { "BufRead", "BufNewFile" },
 
-                    tsserver_file_preferences = {
-                        importModuleSpecifierPreference = "non-relative",
-                    },
+    config = function()
+        require("typescript-tools").setup({
+            settings = {
+
+                tsserver_file_preferences = {
+
+                    expose_as_code_action = "all",
+                    separate_diagnostic_server = true,
+                    organizeImportsIgnoreCase = true,
+                    importModuleSpecifierPreference = "non-relative",
+                    importModuleSpecifierEnding = "minimal",
+                    includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                    includeInlayFunctionParameterTypeHints = true,
+                    includeInlayVariableTypeHints = true,
+                    includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+                    includeInlayPropertyDeclarationTypeHints = true,
+                    includeInlayFunctionLikeReturnTypeHints = true,
+                    includeInlayEnumMemberValueHints = true,
+                    quotePreference = "auto",
+                    includeInlayParameterNameHints = "all",
+                    includeCompletionsForModuleExports = true,
+                    jsxAttributeCompletionStyle = "braces",
                 },
-            })
-
-            local autocmd = vim.api.nvim_create_autocmd
-
-            autocmd("BufWritePre", {
-                pattern = "*.ts,*.tsx",
-                callback = function(args)
-                    -- Check if commands exist before execution (improved efficiency)
-                    local success, err_msg = pcall(vim.cmd, "execute 'TSToolsAddMissingImports sync'")
-                    if success then
-                        vim.cmd("TSToolsAddMissingImports sync")
-                    else
-                        -- Optional: Log or handle errors gracefully (e.g., print a message)
-                        print("Error executing TSToolsAddMissingImports:", err_msg)
-                    end
-
-                    success, err_msg = pcall(vim.cmd, "execute 'TSToolsOrganizeImports sync'")
-                    if success then
-                        vim.cmd("TSToolsOrganizeImports sync")
-                    else
-                        -- Handle errors as needed
-                        print("Error executing TSToolsOrganizeImports:", err_msg)
-                    end
-
-                    -- Add similar checks and execution for other commands (avoid repetition)
-                    local commands = {
-                        "TSToolsAddMissingImports",
-                        "TSToolsOrganizeImports",
-                    }
-                    for _, cmd in ipairs(commands) do
-                        success, err_msg = pcall(vim.cmd, "execute '" .. cmd .. " sync'")
-                        if success then
-                            vim.cmd(cmd .. " sync")
-                        else
-                            -- Handle errors as needed
-                            print("Error executing", cmd, ":", err_msg)
-                        end
-                    end
-                end,
-            })
-        end,
-    },
+                tsserver_format_options = {
+                    quotePreference = "double",
+                    allowAutoRename = true,
+                    allowFormatOnSave = true,
+                    allowIncompleteCompletions = false,
+                    allowRenameOfImportPath = true,
+                },
+            },
+        })
+        local autocmd = vim.api.nvim_create_autocmd
+        autocmd("BufWritePre", {
+            pattern = "*.ts,*.tsx,*.jsx,*.js",
+            callback = function(args)
+                vim.cmd("TSToolsAddMissingImports sync")
+                vim.cmd("TSToolsOrganizeImports sync")
+                vim.cmd("TSToolsRemoveUnused sync")
+            end,
+        })
+    end,
 }

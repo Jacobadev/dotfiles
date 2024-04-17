@@ -33,7 +33,7 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun
 alias gl='git pull --prune'
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --max-count=45"
 alias gp='git push origin HEAD'
-alias gsu='git push --set-upstream'
+alias gpu='git push --set-upstream origin main'
 
 alias gd='git diff'
 alias gca='git commit --amend --no-edit'
@@ -52,7 +52,7 @@ alias th='tail -n40 < <(history 1 | cat)'
 alias al="alias | cat"
 # VIM
 
-alias vim="nvim"
+alias vim="/bin/nvim"
 alias v="nvim"
 ### RUN AGENTS
 

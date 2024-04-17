@@ -1,0 +1,87 @@
+return {
+
+    -- "hrsh7th/nvim-cmp",
+    -- event = "LspAttach",
+    --
+    -- dependencies = {
+    --     "L3MON4D3/LuaSnip",
+    --     "hrsh7th/cmp-nvim-lsp",
+    --     "saadparwaiz1/cmp_luasnip",
+    --     "js-everts/cmp-tailwind-colors",
+    --     "hrsh7th/cmp-nvim-lsp-signature-help",
+    --     "hrsh7th/cmp-nvim-lua",
+    --     "hrsh7th/cmp-cmdline",
+    --     "hrsh7th/cmp-buffer",
+    --     "hrsh7th/cmp-path",
+    -- },
+    --
+    -- config = function()
+    --     local cmp = require("cmp")
+    --     local luasnip = require("luasnip")
+    --
+    --     local borderstyle = {
+    --         border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    --         winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    --     }
+    --
+    --     local buffer_option = {
+    --         -- Complete from all visible buffers (splits)
+    --         get_bufnrs = function()
+    --             local bufs = {}
+    --             for _, win in ipairs(vim.api.nvim_list_wins()) do
+    --                 bufs[vim.api.nvim_win_get_buf(win)] = true
+    --             end
+    --             return vim.tbl_keys(bufs)
+    --         end,
+    --     }
+    --     ---@diagnostic disable
+    --
+    --     cmp.setup({
+    --         snippet = {
+    --             expand = function(args)
+    --                 luasnip.lsp_expand(args.body)
+    --             end,
+    --         },
+    --
+    --
+    --                    sources = cmp.config.sources({
+    --             {
+    --                 name = "nvim_lsp",
+    --                 priority = 10,
+    --                 entry_filter = limit_lsp_types,
+    --             },
+    --             {
+    --                 name = "luasnip",
+    --                 priority = 7,
+    --                 max_item_count = 5,
+    --             },
+    --             {
+    --                 name = "buffer",
+    --                 priority = 7,
+    --                 keyword_length = 5,
+    --                 max_item_count = 10,
+    --                 option = buffer_option,
+    --             },
+    --             { name = "nvim_lua", priority = 5 },
+    --             { name = "path", priority = 4 },
+    --         }),
+    --
+    --         sorting = {
+    --             priority_weight = 2,
+    --             comparators = {
+    --                 cmp.config.compare.exact,
+    --                 cmp.config.compare.locality,
+    --                 cmp.config.compare.score,
+    --                 cmp.config.compare.recently_used,
+    --                 cmp.config.compare.offset,
+    --                 cmp.config.compare.sort_text,
+    --                 cmp.config.compare.order,
+    --             },
+    --         },
+    --                   window = {
+    --             completion = borderstyle,
+    --             documentation = borderstyle,
+    --         },
+    --     })
+    -- end,
+}

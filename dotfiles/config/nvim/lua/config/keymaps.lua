@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps her
 
-local opts = { noremap = true, silent = true }
+local silent = { silent = true }
 vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 
@@ -32,4 +32,7 @@ end)
 vim.keymap.set("n", "<leader>rbf", function()
     require("refactoring").refactor("Extract Block To File")
 end)
--- Extract block supports only normal mode
+vim.keymap.set("n", "x", '"_x', silent)
+vim.keymap.set("n", "X", '"_X', silent)
+vim.keymap.set("v", "x", '"_x', silent)
+vim.keymap.set("v", "X", '"_X', silent)

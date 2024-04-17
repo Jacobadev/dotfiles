@@ -52,6 +52,7 @@ return {
             auto_install = true,
         },
     },
+    { "typescript-language-server", enabled = false },
     {
         "williamboman/mason.nvim",
         opts = {
