@@ -36,3 +36,6 @@ vim.keymap.set("n", "x", '"_x', silent)
 vim.keymap.set("n", "X", '"_X', silent)
 vim.keymap.set("v", "x", '"_x', silent)
 vim.keymap.set("v", "X", '"_X', silent)
+
+vim.keymap.set("n", "<leader>crr", "<cmd>TSToolsFileReferences<cr>", { desc = "Find File References" })
+vim.keymap.set("n", "<leader>crn", "<cmd>TSToolsRenameFile<cr>", { desc = "Rename File" })
