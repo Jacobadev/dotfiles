@@ -19,7 +19,10 @@ return {
             "hrsh7th/cmp-nvim-lsp-signature-help",
             "saadparwaiz1/cmp_luasnip",
             "L3MON4D3/LuaSnip",
-            "js-everts/cmp-tailwind-colors",
+            {
+                "js-everts/cmp-tailwind-colors",
+                opts = {},
+            },
         },
         config = function()
             local cmp = require("cmp")
@@ -74,7 +77,6 @@ return {
                     {
                         name = "nvim_lsp",
                         priority = 10,
-                        -- Limits LSP results to specific types based on line context (Fields, Methods, Variables)
                         entry_filter = limit_lsp_types,
                     },
                     {
@@ -112,9 +114,8 @@ return {
                         -- for tailwind colors
                         if vim_item.kind == "Color" then
                             vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
-                            if vim_item.kind ~= "Color" then
-                                vim_item.menu = "Color"
-                                return vim_item
+                            if kind_icons[vim_item.kind] then
+                                vim_item.kind = kind_icons[vim_item.kind] .. " "
                             end
                         end
 

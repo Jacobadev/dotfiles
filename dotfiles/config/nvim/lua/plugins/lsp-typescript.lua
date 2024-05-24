@@ -9,32 +9,28 @@ return {
         config = function()
             require("typescript-tools").setup({
                 settings = {
-                    code_lens = "all",
 
-                    separate_diagnostic_server = true,
                     tsserver_file_preferences = {
-                        expose_as_code_action = "all",
+                        includeInlayParameterNameHints = "literal",
+                        includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                        includeInlayFunctionParameterTypeHints = true,
+                        includeInlayVariableTypeHints = false,
+                        includeInlayPropertyDeclarationTypeHints = true,
+                        includeInlayFunctionLikeReturnTypeHints = true,
+                        includeInlayEnumMemberValueHints = true,
                         separate_diagnostic_server = true,
                         organizeImportsIgnoreCase = true,
                         importModuleSpecifierPreference = "non-relative",
                         importModuleSpecifierEnding = "minimal",
-                        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                        includeInlayFunctionParameterTypeHints = true,
-                        includeInlayVariableTypeHints = true,
-                        includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                        includeInlayPropertyDeclarationTypeHints = true,
-                        includeInlayFunctionLikeReturnTypeHints = true,
-                        includeInlayEnumMemberValueHints = true,
-                        quotePreference = "auto",
-                        includeInlayParameterNameHints = "all",
+                        includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+
                         includeCompletionsForModuleExports = true,
                         jsxAttributeCompletionStyle = "braces",
                     },
                     tsserver_format_options = {
                         quotePreference = "double",
                         allowFormatOnSave = true,
-                        allowIncompleteCompletions = false,
-                        allowRenameOfImportPath = true,
+                        allowIncompleteCompletions = true,
                     },
                 },
             })
