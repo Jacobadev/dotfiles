@@ -14,6 +14,13 @@
 tmux_conf_new_session_prompt=false
 # -- windows & pane creation ---------------------------------------------------
 
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'github_username/plugin_name#branch'
+# set -g @plugin 'git@github.com:user/plugin'
+# set -g @plugin 'git@bitbucket.com:user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 # new window retains current path, possible values are:
 #   - true
 #   - false (default)
@@ -376,7 +383,8 @@ bind-key -n M-2 select-window -t 2
 bind-key -n M-3 select-window -t 3
 bind-key -n M-4 select-window -t 4
 bind-key -n M-5 select-window -t 5
-
+set-option -g status-position bottom
+bind-key -n C-l send-keys C-l
 bind-key -n Home send Escape "OH"
 bind-key -n End send Escape "OF"
 # increase history size
@@ -409,13 +417,13 @@ set -g history-limit 1000000
 # by default, launching tmux will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_launch=true
+tmux_conf_update_plugins_on_launch=false
 
 # by default, reloading the configuration will update tpm and all plugins
 #   - true (default)
 #   - false
-tmux_conf_update_plugins_on_reload=true
 
+tmux_conf_update_plugins_on_reload=true
 # by default, reloading the configuration will uninstall tpm and plugins when no
 # plugins are enabled
 #   - true (default)
@@ -432,11 +440,11 @@ tmux_conf_uninstall_plugins_on_reload=true
 
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
-#set -g @plugin 'tmux-plugins/tmux-copycat'
-#set -g @plugin 'tmux-plugins/tmux-cpu'
-#set -g @plugin 'tmux-plugins/tmux-resurrect'
-#set -g @plugin 'tmux-plugins/tmux-continuum'
-#set -g @continuum-restore 'on'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'
 
 
 # -- custom variables ----------------------------------------------------------
@@ -478,3 +486,5 @@ tmux_conf_uninstall_plugins_on_reload=true
 # "$@"
 # # /!\ do not remove the previous line
 # #     do not write below this line
+#
+

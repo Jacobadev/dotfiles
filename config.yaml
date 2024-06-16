@@ -13,15 +13,9 @@ options:
   confpath: ~/.dotfiles
   tmpdir: ~/dotdrop_temp
 dotfiles:
-  f_zshrc:
-    src: home/jacoba/.zshrc
-    dst: /home/jacoba/.zshrc
   f_gitconfig:
     src: home/jacoba/.gitconfig
     dst: /home/jacoba/.gitconfig
-  d_bspwm:
-    src: config/bspwm
-    dst: ~/.config/bspwm
   d_scripts:
     src: scripts
     dst: ~/scripts
@@ -38,11 +32,9 @@ dotfiles:
     src: config/alacritty
     dst: ~/.config/alacritty
 profiles:
-  arch:
+  jacobaarch:
     dotfiles:
-    - f_zshrc
     - f_gitconfig
-    - d_bspwm
     - d_scripts
     - d_nvim
     - f_tmux.conf
