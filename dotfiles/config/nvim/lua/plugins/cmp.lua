@@ -1,12 +1,4 @@
 return {
-  --
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
-
   {
     "hrsh7th/nvim-cmp",
 
@@ -145,14 +137,6 @@ return {
 
         mapping = cmp.mapping.preset.insert({
 
-          ["<Down>"] = cmp.mapping(function(fallback)
-            cmp.close()
-            fallback()
-          end, { "i" }),
-          ["<Up>"] = cmp.mapping(function(fallback)
-            cmp.close()
-            fallback()
-          end, { "i" }),
           ["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(-2), { "i", "c" }),
           ["<C-p>"] = cmp.mapping(cmp.mapping.scroll_docs(2), { "i", "c" }),
           ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -160,9 +144,7 @@ return {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
           }),
-          ["<C-y> "] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-          }),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
           ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()

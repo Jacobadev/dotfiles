@@ -1,0 +1,79 @@
+local lspconfig = require("lspconfig")
+
+local handlers = {
+  ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    silent = true,
+  }),
+  ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {}),
+}
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+local function on_attach(client, bufnr)
+  -- set up buffer keymaps, etc.
+end
+
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+require("mason-lspconfig").setup_handlers({
+  -- The first entry (without a key) will be the default handler
+  -- and will be called for each installed server that doesn't have
+  -- a dedicated handler.
+  function(server_name)
+    require("lspconfig")[server_name].setup({
+      on_attach = on_attach,
+      capabilities = capabilities,
+      handlers = handlers,
+    })
+  end,
+
+  ["tailwindcss"] = function()
+    lspconfig.tailwindcss.setup({
+      capabilities = require("config.lsp.servers.tailwindcss").capabilities,
+      filetypes = require("config.lsp.servers.tailwindcss").filetypes,
+      handlers = handlers,
+      init_options = require("config.lsp.servers.tailwindcss").init_options,
+      on_attach = require("config.lsp.servers.tailwindcss").on_attach,
+      settings = require("config.lsp.servers.tailwindcss").settings,
+    })
+  end,
+
+  ["cssls"] = function()
+    lspconfig.cssls.setup({
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = require("config.lsp.servers.cssls").on_attach,
+      settings = require("config.lsp.servers.cssls").settings,
+    })
+  end,
+
+  ["jsonls"] = function()
+    lspconfig.jsonls.setup({
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = on_attach,
+      settings = require("config.lsp.servers.jsonls").settings,
+    })
+  end,
+
+  ["lua_ls"] = function()
+    lspconfig.lua_ls.setup({
+      capabilities = capabilities,
+      handlers = handlers,
+      on_attach = on_attach,
+      settings = require("config.lsp.servers.lua_ls").settings,
+    })
+  end,
+
+  ["vuels"] = function()
+    lspconfig.vuels.setup({
+      filetypes = require("config.lsp.servers.vuels").filetypes,
+      handlers = handlers,
+      init_options = require("config.lsp.servers.vuels").init_options,
+      on_attach = require("config.lsp.servers.vuels").on_attach,
+      settings = require("config.lsp.servers.vuels").settings,
+    })
+  end,
+})

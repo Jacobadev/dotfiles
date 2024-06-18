@@ -28,7 +28,7 @@ return {
   },
 
   -- disable trouble
-  { "folke/trouble.nvim",      enabled = false },
+  { "folke/trouble.nvim", enabled = false },
 
   -- override nvim-cmp and add cmp-emoji
   {
@@ -156,6 +156,7 @@ return {
         "shfmt",
         "flake8",
       },
+      auto_install = true,
     },
   },
 
