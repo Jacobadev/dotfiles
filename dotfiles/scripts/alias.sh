@@ -100,3 +100,4 @@ alias pa="poetry add"
 ## PACMAN
 alias ps="sudo pacman --noconfirm -S"
 alias pr="sudo pacman --noconfirm -R"
+alias p="pacman"

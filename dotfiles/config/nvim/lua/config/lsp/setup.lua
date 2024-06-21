@@ -1,5 +1,15 @@
 local lspconfig = require("lspconfig")
+local cmp_nvim_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+local mason_status_ok, mason = pcall(require, "mason")
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+local lsp_format_ok, lsp_format = pcall(require, "lsp-format")
 
+if not (mason_status_ok and mason_lspconfig_ok and cmp_nvim_lsp_status_ok and lsp_format_ok) then
+  vim.api.nvim_err_writeln("Mason, Mason LSP Config, Completion, or LSP Format not installed!")
+  return
+end
+local u = require("functions.utils")
+mason.setup()
 local handlers = {
   ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     silent = true,
@@ -64,16 +74,6 @@ require("mason-lspconfig").setup_handlers({
       handlers = handlers,
       on_attach = on_attach,
       settings = require("config.lsp.servers.lua_ls").settings,
-    })
-  end,
-
-  ["vuels"] = function()
-    lspconfig.vuels.setup({
-      filetypes = require("config.lsp.servers.vuels").filetypes,
-      handlers = handlers,
-      init_options = require("config.lsp.servers.vuels").init_options,
-      on_attach = require("config.lsp.servers.vuels").on_attach,
-      settings = require("config.lsp.servers.vuels").settings,
     })
   end,
 })

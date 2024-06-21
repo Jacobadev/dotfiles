@@ -1,14 +1,18 @@
 return {
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-      },
-      auto_install = true,
-    },
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup()
+    end,
   },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("lspconfig") -- Você pode adicionar configuração adicional aqui
+    end,
+  },
+  "lukas-reineke/lsp-format.nvim",
+  config = function()
+    require("lsp-format").setup({})
+  end,
 }
