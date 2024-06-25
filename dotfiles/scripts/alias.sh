@@ -101,3 +101,14 @@ alias pa="poetry add"
 alias ps="sudo pacman --noconfirm -S"
 alias pr="sudo pacman --noconfirm -R"
 alias p="pacman"
+
+## LAZYGIT
+alias lg="lazygit"
+
+##  SYSTEMCTL
+alias ss="sudo systemctl status"
+alias sst="sudo systemctl start"
+alias ssp="sudo systemctl stop"
+alias sse="sudo systemctl enable"
+alias ssd="sudo systemctl disable"
+alias ssr="sudo systemctl restart"
