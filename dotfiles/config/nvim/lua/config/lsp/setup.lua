@@ -2,9 +2,8 @@ local lspconfig = require("lspconfig")
 local cmp_nvim_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 local mason_status_ok, mason = pcall(require, "mason")
 local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
-local lsp_format_ok, lsp_format = pcall(require, "lsp-format")
 
-if not (mason_status_ok and mason_lspconfig_ok and cmp_nvim_lsp_status_ok and lsp_format_ok) then
+if not (mason_status_ok and mason_lspconfig_ok and cmp_nvim_lsp_status_ok) then
   vim.api.nvim_err_writeln("Mason, Mason LSP Config, Completion, or LSP Format not installed!")
   return
 end

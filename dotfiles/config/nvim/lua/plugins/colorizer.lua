@@ -2,6 +2,7 @@ return {
   "norcalli/nvim-colorizer.lua",
   opts = {
     filetypes = {
+      "vue",
       "html",
       "css",
       "javascript",

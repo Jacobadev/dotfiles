@@ -45,7 +45,7 @@ case "$1" in
 	;;
 # Apps
 --browser)
-	brave
+	google-chrome-stable
 	;;
 --editor)
 	nvim
