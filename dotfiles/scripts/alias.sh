@@ -22,10 +22,11 @@ alias .4='cd ../../../../'
 alias .4='cd ../../../../../'
 ## LS
 #
-alias lS='exa -1 ' # one column, just names
+alias lS='exa -1' # one column, just names
 alias lt='exa --tree --level=4'
 alias l='exa' # ls
-alias ls='exa -la'
+alias ls='exa -la --icons --no-time'
+alias lsa='exa -l --no-time --icons --no-time --no-user --color always --no-permissions'
 alias ll='exa -lbGF --git' # long list
 
 #### GIT
