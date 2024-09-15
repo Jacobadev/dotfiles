@@ -10,46 +10,26 @@
 
 [credential]
     helper = store
-
-[color]
-    branch = auto
-    diff = auto
-    status = always
-    ui = true
-
-[color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
-
-[color "diff"]
-    meta = 11
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    func = 146 bold
-    commit = yellow bold
-    whitespace = red reverse
-
-[color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+[push]
+  autoSetupRemote = true
+  default = current
 
 [core]
-    pager = diff-so-fancy | less --tabs=4 -RF
+    pager = delta
 
 [interactive]
-    diffFilter = diff-so-fancy --patch
+    diffFilter = delta --color-only
 
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
+[delta]
 
-[filter "lfs"]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
+    features = line-numbers 
+    navigate = true    # use n and N to move between diff sections
+    dark = true
+  hyperlinks = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+  colorMoved = default
+

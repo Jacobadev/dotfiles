@@ -17,5 +17,4 @@ keymap("n", "x", '"_x', silent)
 keymap("n", "X", '"_X', silent)
 keymap("v", "x", '"_x', silent)
 keymap("v", "X", '"_X', silent)
-
 -- vim.keymap.set("n", "<leader>rr", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>", { desc = "Insert if err" })
