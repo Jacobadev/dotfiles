@@ -10,7 +10,7 @@ vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 
 -- Save file by CTRL-S
-keymap("n", "<C-s>", ":w<CR>", silent)
+keymap({ "s", "i", "n", "v" }, "<C-s>", "<esc>:w<cr>", { desc = "Exit insert mode and save changes.", silent = true })
 keymap("i", "<C-s>", "<ESC> :w<CR>i", silent)
 
 keymap("n", "x", '"_x', silent)
