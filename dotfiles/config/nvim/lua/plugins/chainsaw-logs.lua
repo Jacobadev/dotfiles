@@ -1,0 +1,48 @@
+return {
+  { "chrisgrieser/nvim-chainsaw", enabled = false },
+
+  -- -- log the name & value of the variable under the cursor
+  -- require("chainsaw").variableLog()
+  --
+  -- -- like variableLog, but with syntax specific to inspect an object such as
+  -- -- `console.log(JSON.stringify(foobar))` in javascript
+  -- require("chainsaw").objectLog()
+  --
+  -- -- inspect the type of the variable under cursor, such as `typeof foo` in js
+  -- require("chainsaw").typeLog()
+  --
+  -- -- assertion statement for variable under cursor
+  -- require("chainsaw").assertLog()
+  --
+  -- -- Minimal log statement, with an emoji for differentiation. Intended for
+  -- -- control flow inspection, that is to quickly glance whether a condition was
+  -- -- triggered or not.
+  -- require("chainsaw").emojiLog()
+  --
+  -- -- Sound-playing statement for audible debugging.
+  -- -- Depending on the type of log statement, the program may need
+  -- -- to run in a terminal that supports the system bell command.
+  -- -- Inspired by https://news.ycombinator.com/item?id=41519046
+  -- require("chainsaw").sound()
+  --
+  -- -- create log statement, and position the cursor to enter a message
+  -- require("chainsaw").messageLog()
+  --
+  -- -- 1st call: start measuring the time
+  -- -- 2nd call: logs the time duration since
+  -- require("chainsaw").timeLog()
+  --
+  -- -- debug statements like `debugger` in javascript or `breakpoint()` in python
+  -- require("chainsaw").debugLog()
+  --
+  -- -- prints the stacktrace of the current call
+  -- require("chainsaw").stacktraceLog()
+  --
+  -- -- clearing statement, such as `console.clear()`
+  -- require("chainsaw").clearLog()
+  --
+  -- ---------------------------------------------------
+  --
+  -- -- remove all log statements created by chainsaw
+  -- require("chainsaw").removeLogs()
+}

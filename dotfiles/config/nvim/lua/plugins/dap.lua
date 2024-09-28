@@ -27,21 +27,24 @@ return {
 
     {
       "rcarriga/nvim-dap-ui",
-      -- stylua: ignore
+
       keys = {
-        { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
-     {
-                        '<leader>de',
-                        function()
-                            -- Calling this twice to open and jump into the window.
-                            require('dapui').eval()
-                            require('dapui').eval()
-                        end,
-                        desc = 'Evaluate expression',
-                    },
-
-        -- { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
-
+        {
+          "<leader>du",
+          function()
+            require("dapui").toggle({})
+          end,
+          desc = "Dap UI",
+        },
+        {
+          "<leader>de",
+          function()
+            -- Calling this twice to open and jump into the window.
+            require("dapui").eval()
+            require("dapui").eval()
+          end,
+          desc = "Evaluate expression",
+        },
       },
       opts = {
         icons = {
@@ -53,13 +56,14 @@ return {
         layouts = {
           {
             elements = {
-              { id = "stacks", size = 0.30 },
-              { id = "breakpoints", size = 0.20 },
               { id = "scopes", size = 0.50 },
-              { id = "console", size = 0.20 },
+              { id = "watches", size = 0.25 },
+              { id = "breakpoints", size = 0.25 },
+              { id = "variables", size = 0.10 },
+              { id = "stacks", size = 0.10 },
             },
             position = "left",
-            size = 40,
+            size = 50,
           },
         },
       },
@@ -96,7 +100,7 @@ return {
         -- see mason-nvim-dap README for more information
         handlers = {},
 
-        -- You'll need to check that you have the required things installed
+        -- You'll need to check that you have the required things insta
         -- online, please don't ask me how to install them :)
         ensure_installed = {
           -- Update this to ensure that you have the debuggers for the langs you want
@@ -115,7 +119,15 @@ return {
     { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
     { "<leader>dR", function() require("dap").clear_breakpoints() end, desc = "Remove all breakpoints" },
-    { "<leader>dL", function() require("dap").list_breakpoints(open_quickfix) end, desc = "list_breakpoints" },
+ {
+        "gb",
+        function()
+          require("dap").list_breakpoints()
+          vim.cmd.cwindow()
+        end,
+        desc = "list breakpoints",
+      },
+    { "<leader>dS", function() require("dap").list_breakpoints() end, desc = "list_breakpoints" },
     { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
     { "<leader>dj", function() require("dap").down() end, desc = "Move down in stack" },
     { "<leader>dk", function() require("dap").up() end, desc = "Move up in stack" },
